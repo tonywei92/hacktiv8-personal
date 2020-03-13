@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Farms</title>
+  <%- include('../partials/bootstrapCDN') %>
+</head>
+<body>
+  <div class="container mt-2">
+    <hr>
+    <h2> Harvest Moon Back to Hacktiv8 </h2>
+    <hr>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Farm Name</th>
+          <th scope="col">Player Name</th>
+          <th scope="col">Birthday Day Date</th>
+          <th scope="col">Money</th>
+          <th scope="col">Day Played</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% farms.forEach(farm => { %> 
+          <tr>
+            <th scope="row"><%= farm.id %></th>
+            <td><%= farm.farmName %></td>
+            <td><%= farm.playerName %></td>
+            <td><%= farm.birthDayDate %></td>
+            <td><%= farm.money %></td>
+            <td><%= farm.fullDayPlayed %></td>
+            <td><a class="btn btn-dark" href="/farms/<%=farm.id%>">Look at Farm</a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+{
+  "doctors": [
+    {
+      "name": "Drg. Cindy Maura Saputra",
+      "spesialis": "Dokter Gigi",
+      "id": 1,
+      "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/thumbnails/244445_11-11-2019_13-33-39.jpg",
+      "rating": "100%",
+      "messages": [
+        {
+          "name": "halo",
+          "msg": "siapa disana"
+        },
+        {
+          "name": "john",
+          "msg": "hai dokter"
+        },
+        {
+          "name": "halo",
+          "msg": "hai"
+        },
+        {
+          "name": "halo",
+          "msg": "halooo"
+        }
+      ]
+    },
+    {
+      "name": "Dr. Matthew Mindo",
+      "spesialis": "Spesialis Kebidanan",
+      "id": 2,
+      "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/images/363_9-10-2018_17-7-53.jpg",
+      "rating": "96%",
+      "messages": [
+        {
+          "name": "asdasd",
+          "msg": "halo"
+        }
+      ]
+    },
+    {
+      "name": "Drg. Hendera . M.Kes",
+      "spesialis": "Spesialis Ortodonsia",
+      "id": 3,
+      "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/images/607_11-12-2018_11-18-24.jpg",
+      "rating": "89%",
+      "messages": []
+    },
+    {
+      "name": "Drg. Marlisa",
+      "spesialis": "Dokter Gigi",
+      "id": 4,
+      "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/thumbnails/556675_26-11-2019_12-7-46.jpg",
+      "rating": "99%",
+      "messages": [
+        {
+          "name": "Michael",
+          "msg": "Saya gak enang badan dok 😷"
+        }
+      ]
+    },
+    {
+      "name": "Dr. Rahma Putri Maharani",
+      "spesialis": "Dokter Umum",
+      "id": 5,
+      "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/thumbnails/196758_23-4-2019_17-39-21.jpg",
+      "rating": "90%",
+      "messages": []
+    },
+    {
+      "name": "Dr. Iman Teguh",
+      "spesialis": "Dokter Umum",
+      "id": 6,
+      "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/images/227_16-8-2018_14-19-38.png",
+      "rating": "92%",
+      "messages": []
+    },
+    {
+      "name": "Dr. Angeline Dewi Sp.KK",
+      "spesialis": "Dokter Kulit dan Kelamin",
+      "id": 7,
+      "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/images/18441_9-8-2019_10-21-19.jpg",
+      "rating": "84%",
+      "messages": [
+        {
+          "name": "rubi",
+          "msg": "hai dok"
+        }
+      ]
+    },
+    {
+      "name": "Enditiara Yuli Pratiwi S.Psi",
+      "spesialis": "Psikolog",
+      "id": 8,
+      "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/images/438892_23-9-2019_15-22-12.jpg",
+      "rating": "98%",
+      "messages": []
+    },
+    {
+      "name": "Dr. Maya Esther",
+      "spesialis": "Dokter Kandungan",
+      "id": 9,
+      "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/images/257381_23-5-2019_11-43-56.jpg",
+      "rating": "98%",
+      "messages": [
+        {
+          "name": "adiel",
+          "msg": "Hai dokter"
+        }
+      ]
+    },
+    {
+      "name": "Dr. Ainul Yaqin",
+      "spesialis": "Dokter Umum",
+      "id": 10,
+      "imageUrl": "https://d1e8la4lqf1h28.cloudfront.net/thumbnails/82_23-2-2018_11-11-47.png",
+      "rating": "93%",
+      "messages": []
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "Ashraf Sinclair Meninggal Dunia, Ini 5 Jenis Penyakit Jantung",
+      "imageUrl": "https://d1bpj0tv6vfxyp.cloudfront.net/ashraff-sinclair-meninggal-dunia-ini-6-jenis-penyakit-jantungthumbnail.jpg",
+      "content": "Halodoc, Jakarta - Berita duka kembali datang dari dunia hiburan tanah air. Suami dari Bunga Citra Lestari, Ashraf Sinclair dikabarkan telah menutup usianya (18/02) pada usia ke-40 tahun. Kabar ini dibenarkan oleh Daysz Erlangga selaku manager dari Ashraf Sinclair. Ia mengabarkan bahwa Ashraf meninggal di Rumah Sakit MMC, Kuningan, Jakarta pada pukul 04.51 karena serangan jantung. Kabar meninggalnya pria bernama lengkap Ashraf Daniel bin Mohamed Sinclair ini memang mengejutkan banyak pihak.  Pasalnya pria yang memulai kariernya sebagai aktor di Malaysia ini sebelumnya tidak pernah dikabarkan mengidap penyakit jantung."
+    },
+    {
+      "id": 2,
+      "title": "Jangan Asal, Ketahui Tips Aman Pilih Psikolog",
+      "imageUrl": "https://d1bpj0tv6vfxyp.cloudfront.net/viraldedysusantoinitipsamanpilihpsikologhalodoc.jpg",
+      "content": "Halodoc, Jakarta – Baru-baru ini, media sosial diramaikan oleh nama Dedy Susanto, seorang pria yang mengaku doktor psikologi, tetapi ternyata dalam praktiknya, ia diduga melakukan pelecehan seksual terhadap pasiennya. Kasus ini menuai banyak cibiran, lantaran seorang psikolog yang diharapkan dapat memberi solusi terhadap trauma yang dialami pasiennya malah menimbulkan trauma baru. Berbagai masalah dalam kehidupan, seperti masalah dengan pernikahan atau hubungan, kehilangan pekerjaan, kematian orang yang dicintai, depresi, stres, dan tekanan hidup sehari-hari yang memang dapat melemahkan mental secara signifikan. Itulah mengapa bantuan profesional seperti seorang psikolog sangat diperlukan. Melalui terapi, seorang psikolog dapat membantu siapa saja dari berbagai usia untuk menjalani hidup yang lebih sehat dan lebih produktif. Namun, bagaimana cara memilih psikolog yang profesional dan terpercaya? Biar tidak salah pilih, cari tahu dulu tips aman pilih psikolog di sini."
+    },
+    {
+      "id": 3,
+      "title": "Benarkah GERD bisa Memicu Kematian Mendadak? ",
+      "imageUrl": "https://d1bpj0tv6vfxyp.cloudfront.net/benarkah-gerd-bisa-sebabkan-kematian-mendadak.jpg",
+      "content": "Halodoc, Jakarta – Media sosial tengah diramaikan dengan hoaks seputar penyakit asam lambung naik alias gastroesophageal reflux disease (GERD). Ada yang menyebut penyakit ini bisa memicu komplikasi berupa gangguan pada mata, hingga memengaruhi jantung dan menyebabkan kematian mendadak. Benarkah? Selengkapnya, baca faktanya di bawah ini. GERD dan penyakit jantung memang cenderung memiliki gejala yang serupa, yaitu nyeri dada dan muncul sensasi terbakar. Tak jarang, gejala penyakit ini disalahartikan sebagai serangan jantung atau penyakit jantung koroner. Namun perlu diketahui, asam lambung naik tidak akan memengaruhi jantung dan tidak bisa memicu kematian mendadak."
+    },
+    {
+      "id": 4,
+      "title": "Sehat di Usia Lanjut Ala Harrison Ford, Ini Caranya",
+      "imageUrl": "https://d1bpj0tv6vfxyp.cloudfront.net/sehat-di-usia-lanjut-ala-harrison-ford-ini-caranya.jpg",
+      "content": "Halodoc, Jakarta – Harrison Ford (77), aktor Hollywood yang terkenal karena bermain di film Star Wars ini membuka rahasianya mengapa ia selalu tampil sehat di usianya yang tidak lagi muda. Dilansir dari People, Harrison Ford mengatakan bahwa ia rutin menjalankan olahraga di usianya yang tidak lagi muda. Ia memilih untuk rutin melakukan olahraga tenis dan bersepeda. Selain rutin berolahraga, Harrison Ford juga memiliki menu diet khusus, dengan mengurangi mengonsumsi daging dan dairy food. Saat ini, ia hanya mengonsumsi sayuran dan ikan. Selain menjaga kesehatan di usia lanjut, menurutnya mengurangi konsumsi daging dan dairy food dapat membantu untuk menjaga kelestarian lingkungan. "
+    },
+    {
+      "id": 5,
+      "title": "Berintensitas Tinggi, Apakah Olahraga Crossfit Aman untuk Jantung?",
+      "imageUrl": "https://d1bpj0tv6vfxyp.cloudfront.net/berintensitastinggiapakaholahragacrossfitamanuntukjantunghalodoc.jpg",
+      "content": "Halodoc, Jakarta – Akhir-akhir ini, olahraga crossfit sedang ramai diperbincangkan di berbagai jagat media. Crossfit adalah program latihan yang menggabungkan dua unsur sistem aerobik dan anaerobik. Latihan ini berfokus pada perpaduan latihan interval intensitas tinggi, angkat beban, senam, dan disiplin lainnya dalam satu kali latihan. Program latihan ini dinilai efektif untuk menjaga kebugaran tubuh dan menurunkan berat badan. Bukan hanya itu saja, crossfit diketahui memberikan efek dapat mental dan emosional yang positif. Mengingat ini adalah olahraga intensitas tinggi, crossfit mengajarkan seseorang bahwa mereka lebih mampu dari yang dipikirkan. Melansir dari Health, tim fisiologis olahraga dari University of Wisconsin-La Crosse menemukan bahwa wanita yang melakukan dua latihan crossfit yang berbeda membakar lebih dari 12 kalori per menit dan mempertahankan detak jantung yang meningkat selama seluruh sesi. Olahraga ini memang efektif membakar kalori, namun apakah crossfit aman untuk jantung?"
+    }
+  ]
+}

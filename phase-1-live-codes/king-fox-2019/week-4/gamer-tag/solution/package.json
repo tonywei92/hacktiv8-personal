@@ -1,0 +1,18 @@
+{
+  "name": "gamer-tag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.3",
+    "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "sequelize": "^5.21.2"
+  }
+}

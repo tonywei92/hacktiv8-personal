@@ -1,0 +1,11 @@
+<form action="/reviews/<%= id %>" method="post">
+  <div class="form-group">
+    <label for="description">Review</label>
+    <input type="text" class="form-control" name="description" placeholder="input review...">
+  </div>
+  <div class="form-group">
+    <label for="rating">Bintang</label>
+    <input type="number" class="form-control" name="rating">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

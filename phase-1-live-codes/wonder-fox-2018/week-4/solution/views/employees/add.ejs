@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body>
+  <div class="container">
+    <%- include('../partials/header') %>
+    <h2 class="mb-3">Add an Employee</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <%- include('../partials/validation-errors') %>
+        <form action="/employees/add" method="post">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              name="firstName"
+              class="form-control"
+              id="firstName"
+              placeholder="Enter first name"
+              autocomplete="off"
+              value="<%= oldInputs.firstName || '' %>"
+              autofocus>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              name="lastName"
+              class="form-control"
+              id="lastName"
+              placeholder="Enter last name"
+              value="<%= oldInputs.lastName || '' %>"
+              autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              aria-describedby="emailHelp"
+              id="email"
+              placeholder="Enter email"
+              value="<%= oldInputs.email || '' %>"
+              autocomplete="off">
+            <small id="emailHelp" class="form-text text-muted">
+              We'll never share your email with anyone else! 😉
+            </small>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <a href="/employees" class="btn btn-default">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <%- include('../partials/scripts') %>
+</body>
+</html>

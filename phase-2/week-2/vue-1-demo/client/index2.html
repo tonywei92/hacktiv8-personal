@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button-counter @hello="helloCalled" :students="students" :darkmode="true"></button-counter>
+        <br>
+        <button-counter :darkmode="false"></button-counter>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+Vue.component('button-counter', {
+    props: ['darkmode', "students"],
+    data: function(){
+        return {
+            clicked: 0
+        }
+    },
+    methods:{
+        
+    },
+    mounted:function(){
+        console.log(this.darkmode)
+    },
+    template: `
+        <div>
+        <button :class="darkmode ? 'bg-blue-800 text-white': 'border border-gray-500 rounded px-2 py-2'" @click="clicked++">clicked {{clicked}}</button>
+        <p>test</p>
+        <ul>
+            <li v-for="student in students">
+                <h1>{{student.name}}</h1>
+                <h1>{{student.gender}}</h1>
+            </li>
+        </ul>
+        <button class="border border-grey-800 px-4 py-2" @click="$emit('hello', 'ini datanya')">click</button>
+        </div>
+    `
+})
+
+var vue = new Vue({
+    el: "#app",
+    data: {
+        message: "hello world",
+        clicked: 0,
+        clicked2: 0,
+        counter: 0,
+        students: [
+            {
+                name: "tony",
+                gender: "male"
+            },
+            {
+                name: "fiqi",
+                gender: "male"
+            },
+            {
+                name: "stefani",
+                gender: "female"
+            }
+        ]
+    },
+    methods:{
+        helloCalled: function(param){
+            console.log('hello event received', param)
+        }
+    }
+})
+</script>
+</html>

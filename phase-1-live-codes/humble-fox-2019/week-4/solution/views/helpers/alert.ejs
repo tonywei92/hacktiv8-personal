@@ -1,0 +1,12 @@
+<% if(typeof type === "undefined"){
+    var type = "success"
+}
+if(typeof message === "undefined"){
+    var message = ""
+}
+%>
+
+<div class="flash <%= type ==="success" ? "flash-success": ""%> <%= type==="danger" ? "flash-danger": "" %> alert"
+    role="alert">
+    <span><%= message %></span>
+</div>

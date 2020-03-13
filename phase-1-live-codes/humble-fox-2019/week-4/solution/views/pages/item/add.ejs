@@ -1,0 +1,35 @@
+<%- include('../../partials/header') %>
+<div class="row">
+    <form class="col s12" method="POST">
+        <div class="row">
+            <div class="col s12">
+                <h4>Add new item</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="name" type="text" name="name" class="validate">
+                <label for="name">Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <select class="browser-default" name="condition" id="condition">
+                    <option value="GOOD">Good</option>
+                    <option value="MEDIUM">Medium</option>
+                    <option value="BAD">Bad</option>
+                </select>
+            </div>
+
+            <div class="input-field col s6">
+                <input placeholder="10000" id="pricePerDay" name="pricePerDay" type="text" class="validate">
+                <label for="pricePerDay">Price/day</label>
+            </div>
+        </div>
+
+
+        <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">save</i>Save</button>
+
+    </form>
+</div>
+<%- include('../../partials/footer') %>

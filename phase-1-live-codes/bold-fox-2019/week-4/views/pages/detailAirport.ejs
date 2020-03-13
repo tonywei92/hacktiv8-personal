@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include ../partials/head.ejs %>
+  <body>
+    <% include ../partials/navbar.ejs %>
+    <div class="container">
+      <% if (error) { %>
+        <br>
+        <%- include ../partials/alert.ejs %>
+      <% } %>
+      <div class="row">
+        <div class="col">
+          <br>
+          <h1><%= airport.name %></h1>
+          <h3><%= airport.country %></h3>
+        </div>
+        <div class="col">
+            <br>
+            <h1>Add Flight</h1>
+            <%- include('../partials/form.ejs', { 
+              actionUrl: `/flightSchedules/${airport.id}`, 
+              airplanes,
+              schedule: {}
+            }) %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+          <%- include('../partials/table.ejs', { 
+            hrefUrl: `/airports/${airport.id}`,
+            schedules: airport.FlightSchedules,
+            getTimeFormat,
+            currencyFormat,
+            getColorFormat,
+            order
+          }) %>
+      </div>
+    </div>
+    <% include ../lib/bootstrap4/script.ejs %>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+
+    <title>Glory Fox - First Live Code</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="/">Dad Jokes</a>
+          <a href="#" class="text-danger">Logout</a>
+        </div>
+      </nav>
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-4">{{ joke }}</h1>
+          <hr class="my-4">
+          <p>Do you like this joke?</p>
+          <a class="btn btn-success" href="#" role="button" @click.prevent="addToMyFavorites(id, joke)">Yes, add this to My Favorites</a>
+          <a class="btn btn-danger" href="#" role="button" @click.prevent="fetchNewJoke">No, generate new joke</a>
+        </div>
+      </div>
+      <div class="container">
+        <h1 class="text-center">My Favorites</h1>
+        <hr class="my-4">
+        <div class="row">
+          <div class="col-lg-4 mb-4" v-for="favorite in favorites" :key="favorite.id">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-text">{{ favorite.joke }}</p>
+                <a href="#" class="card-link text-danger" @click.prevent="removeFromMyFavorites(favorite.id)">Remove</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

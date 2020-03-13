@@ -1,0 +1,34 @@
+<h5>Donation List</h5>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Donatur</th>
+      <th scope="col">Donation Ammount</th>
+      <th scope="col">Virtual Account</th>
+      <th scope="col">Campaign Name</th>
+      <th scope="col">Paid Date</th>
+      <th scope="col">Verify</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% donations.forEach((donation ,i ) => { %>
+      <tr>
+        <th scope="row"><%= i+1 %></th>
+        <td><%= donation.name  %></td>
+        <td><%= formatUang(donation.totalDonation) %></td>
+        <td><%= donation.virtualAccount %></td>
+        <td><%= donation.Campaign.name %></td>
+        <td><%= donation.paidDate %></td>
+        <td>
+          <% if(!donation.paid) { %>
+            <a class="btn btn-primary" href="donations/verify/<%= donation.id  %>" role="button">Verify</a>
+            <a class="btn btn-danger my-2" href="donations/delete/<%= donation.id  %>" role="button">Delete</a>
+          <% } else { %>
+            verified
+          <% } %>
+        </td>
+      </tr>
+    <% })%>
+  </tbody>
+</table>

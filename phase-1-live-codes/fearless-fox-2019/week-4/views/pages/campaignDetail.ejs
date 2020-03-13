@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col">
+    <h2><%= campaign.name %></h2>
+  </div>
+</div>
+<div class="row my-2">
+  <div class="col-sm-9">
+    <h3><%= formatUang(campaign.dataValues.collectedAmount)%></h3>
+    <p>Batas waktu pengumpulan dana : <%= campaign.timeLimit %></p>
+    <div class="progress mb-2">
+      <div class="progress-bar " role="progressbar" aria-valuenow="120" aria-valuemin="0" aria-valuemax="100"
+        style="width:<%= campaign.dataValues.amountPercentage %>">
+        <%= campaign.dataValues.amountPercentage%>
+      </div>
+    </div>
+    <p>Terkumpul dari target <%= formatUang(campaign.donationTarget) %></p>
+    <p><%= campaign.description %></p>
+    <%- include('../partials/successNotif')%>
+    <%- include('../partials/errorNotif')%>
+    <form method="POST" action=<%= `/donations/${campaign.id}` %>>
+      <div class="form-group">
+        <label for="donationAmount">Donation Amount</label>
+        <input type="number" name="totalDonation" class="form-control" placeholder="Minimum amount Rp.1000">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Name</label>
+        <input name="name" type="text" class="form-control" placeholder="Input your name here">
+      </div>
+      <div class="form-group">
+        <textarea name="message" class="form-control"
+          placeholder="Tulis dukungan/doa untuk penggalangan dana ini"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="col-sm-3 text-center">
+    <h3 class="">Daftar Donatur</h3>
+    <% campaign.Donations.forEach(donation => { %>
+    <div class="card mx-3">
+      <h5 class="card-header"><%= donation.name %></h5>
+      <div class="card-body">
+        <p><%= formatUang(donation.totalDonation) %></p>
+        <p class="card-text"><%= donation.message %></p>
+      </div>
+    </div>
+    <% })%>
+  </div>
+</div>

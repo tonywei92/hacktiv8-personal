@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <%- include('../partials/head.ejs')%>
+  </head>
+  <body>
+    <%- include('../partials/navbar.ejs')%>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Kingdom Name</th>
+          <th scope="col"><a href="/soldiers?orderBy=total">Total Soldier</a></th>
+          <th scope="col"><a href="/soldiers?orderBy=attack">Total Attack</a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% kingdoms.forEach((kingdom, idx) => {
+          %>
+          <tr>
+              <th scope="row"><%= idx + 1%></th>
+              <td><%= kingdom.Kingdom.kingdomName %></td>
+              <td><%= kingdom.dataValues.totalSoldier %></td>
+              <td><%= kingdom.dataValues.totalAttack %></td>
+            </tr>
+        <% }) %>
+        
+      </tbody>
+    </table>
+    <%- include('../lib/bootstrap/script.ejs')%>
+  </body>
+</html>

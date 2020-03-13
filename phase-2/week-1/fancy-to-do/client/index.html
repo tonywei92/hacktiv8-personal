@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/v4-shims.css">
+    <link href="https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbarNya" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">Fancy Todo</a>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle cursorNya" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="color: azure;">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -4vw;">
+                    <a onclick="showPrivateTodo()" class="dropdown-item cursorNya">Personal Todo</a>
+                    <a onclick="findAllProject()" class="dropdown-item cursorNya">All Project</a>
+                    <a onclick="showHoliday()" class="dropdown-item cursorNya">Holidays Plan</a>
+                    <div class="dropdown-divider"></div>
+                    <a onclick="logout()" class="dropdown-item cursorNya">LogOut</a>
+                </div>
+            </li>
+        </div>
+    </nav>
+
+    <!-- sidebar -->
+    <!-- <div id="sidebar" class="ui left demo vertical inverted sidebar labeled icon menu">
+        <a onclick="showPrivateTodo()" class="item">
+            <i class="home icon"></i>
+            Home
+        </a>
+        <a class="item">
+            <i class="block layout icon"></i>
+            Topics
+        </a>
+        <a class="item">
+            <i class="smile icon"></i>
+            Friends
+        </a>
+    </div> -->
+    <!-- -------------------------- -->
+
+
+    <!-- sign in -->
+    <div id="registerLoginPage" class="registerNya">
+        <div class="container">
+            <div class="row rowNya">
+                <div class="col-4 p-0">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Register</h5>
+                            <form class="ui form">
+                                <div class="field">
+                                    <label>Name</label>
+                                    <input id="registerName" type="text" name="first-name" placeholder="Name">
+                                </div>
+                                <div class="field">
+                                    <label>Email</label>
+                                    <input id="registerEmail" type="email" name="last-name" placeholder="Email">
+                                </div>
+                                <div class="field">
+                                    <label>Password</label>
+                                    <input id="registerPassword" type="password" name="last-name"
+                                        placeholder="Password">
+                                </div>
+                                <button id="register" class="ui brown button">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <form class="ui form">
+                                <h5 class="card-title">Login</h5>
+                                <div class="field">
+                                    <label>Email</label>
+                                    <input id="loginEmail" type="email" name="last-name" placeholder="Email">
+                                </div>
+                                <div class="field">
+                                    <label>Password</label>
+                                    <input id="loginPassword" type="password" name="last-name" placeholder="Password">
+                                </div>
+                                <button id="login" class="ui brown button">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 p-0 atasNya" id="div" style="height: 60vh;">
+                    <div class="card h-100" style="border: 0;">
+                        <div class="card-body" style="background-color: bisque;">
+                            <img src="https://media.giphy.com/media/12z0i6jSCiMa4/giphy.gif" alt="gambar"
+                                style="max-width: -webkit-fill-available;">
+                            <button id="button" class="btn btn-light"> Click to swipe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD TODO MODAL -->
+    <div class="modal fade" id="addTodoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="top:17%">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Todo </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control" id="titleAddTodo">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="descriptionAddTodo"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Date:</label>
+                            <input type="date" class="form-control" id="dateAddTodo" placeholder="Task Todo Due Date"
+                                required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="addPrivateTodo" data-dismiss="modal" type="button" class="btn btn-primary">Add
+                        Todo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------- -->
+
+
+    <!-- Todo nya -->
+    <div id="privateTodo" class="todoNya mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <i data-toggle="modal" data-target="#addTodoModal"
+                    class="huge grey plus circle alternate icon cursorNya"></i>
+            </div>
+            <div id="privateTodoList" class="row" style="justify-content: center;">
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------ -->
+
+    <!-- Project add Modal -->
+    <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="top:17%">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Project </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Project Name:</label>
+                            <input type="text" class="form-control" id="titleAddProject">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="addProject" data-dismiss="modal" type="button" class="btn btn-primary">Add
+                        Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------------------------- -->
+
+
+    <!-- project list -->
+    <div id="project" class="todoNya mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <i data-toggle="modal" data-target="#addProjectModal"
+                    class="huge grey plus circle alternate icon cursorNya"></i>
+            </div>
+            <div id="projectList" class="row" style="justify-content: center;">
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------ -->
+
+
+    <!-- ADD PROJECT TODO MODAL -->
+    <div class="modal fade" id="addProjectTodoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="top:17%">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Todo </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control" id="titleProjectTodo">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="descriptionProjectTodo"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Date:</label>
+                            <input type="date" class="form-control" id="dateProjectTodo"
+                                placeholder="Task Todo Due Date" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="addProjectTodo" data-dismiss="modal" type="button" class="btn btn-primary">Add Project
+                        Todo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------- -->
+
+
+    <!-- ADD PROJECT MEMBER MODAL -->
+    <div class="modal fade" id="addProjectMemberModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="top:17%">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Project Member </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control" id="inputUserSearch">
+                        </div>
+                        <div>
+                            <button id="searchUser" type="button" class="btn btn-primary">
+                                Add Project Member</button>
+                        </div>
+                        <div id="UserMemberToAddDiv" class="mt-4" style="display: inline-flex;">
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------- -->
+
+    <!-- HOLIDAY MODAL -->
+    <div class="modal fade" id="holidayModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="top:17%">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Holiday Plan </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control" id="titleHolidayTodo">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="descriptionHolidayTodo"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Date:</label>
+                            <select id="dateHolidayTodo" class="form-control">
+                                <option selected>Choose...</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="addHolidayPlan" data-dismiss="modal" type="button" class="btn btn-primary">Add
+                        Todo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------- -->
+
+    <!-- holiday todo -->
+    <div id="holidayTodo" class="todoNya mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <i data-toggle="modal" data-target="#holidayModal"
+                    class="huge grey plus circle alternate icon cursorNya"></i>
+            </div>
+            <div id="holidayTodoList" class="row" style="justify-content: center;">
+            </div>
+        </div>
+    </div>
+    <!-- -------------------------- -->
+
+    <!-- project todo -->
+    <div id="projectTodo" class="todoNya mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <i data-toggle="modal" data-target="#addProjectTodoModal"
+                    class="huge grey plus circle alternate icon cursorNya"></i>
+                <i data-toggle="modal" data-target="#addProjectMemberModal" class="fas fa-user-plus fa-4x cursorNya"
+                    style="color: gray;"></i>
+            </div>
+            <div id="projectTodoList" class="row" style="justify-content: center;">
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------ -->
+
+</body>
+<!-- bootstrap jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+
+</html>

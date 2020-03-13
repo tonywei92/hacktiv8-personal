@@ -1,0 +1,25 @@
+<div class="text-center mb-3">
+  Siap memberi bantuan? <br />
+  Halo #OrangBaik, pilih campaign yang ingin Anda bantu <br />
+</div>
+<%- include('../partials/successNotif') %>
+<div class="row d-flex justify-content-around">
+  <%
+    campaigns.forEach(campaign => {
+  %>
+  <div class="card px-0 w-25 mx-1 my-2">
+    <h5 class="card-header"><%= campaign.name %></h5>
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title <%= campaign.verified ? 'text-success' : 'text-danger' %>">Status : <%= campaign.verified ? "Verified" : "Unverified" %></h5>
+      <p class="card-text"><%= campaign.description %></p>
+      <% if (campaign.verified) { %>
+        <a href="<%= `campaigns/${campaign.id}`%>" class="btn btn-primary mt-auto" >Donate</a>
+      <% } else { %>
+        <a href="<%= `campaigns/verify/${campaign.id}`%>" class="btn btn-success mt-auto" >Verify</a>
+      <% } %>
+    </div>
+  </div>
+  <%
+    })
+  %>
+</div>

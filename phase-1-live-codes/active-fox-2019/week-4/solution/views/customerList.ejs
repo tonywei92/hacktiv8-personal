@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1 align="center" style="color:green">WELCOME TO HACKTIV8 BANK</h1>
+    <% if (customers.length > 0) { %>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Identity Number</th>
+            <th>Full Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% customers.forEach(customer => { %>
+            <tr>
+              <td><%= customer.identityNumber %></td>
+              <td><%= customer.fullName %></td>
+              <td> <a href="/customers/<%= customer.id %>/accounts">View Account</a> ||
+              <a href="/customers/<%= customer.id %>/editProfile">Edit Profile</a> </td>
+            </tr>
+          <% }) %>
+
+        </tbody>
+      </table>
+    <% } else { %>
+      <p align='center' style="color:red">No Customers</p>
+    <% } %>
+    <br><br>
+    <a href="/customers/register">REGISTER(NEW CUSTOMER)</a>
+  </body>
+</html>

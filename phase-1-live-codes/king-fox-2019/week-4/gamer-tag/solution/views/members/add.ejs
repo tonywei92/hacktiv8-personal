@@ -1,0 +1,29 @@
+<%- include('../partials/head') %>
+
+<div class="mt-8">
+    <div class="w-64 mx-auto">
+        <h1 class="text-xl mb-4">Add new members</h1>
+        <form action="" method="POST">
+            <div class="flex flex-wrap -mx-2">
+                <div class="w-full flex flex-col px-2 pb-3">
+                    <label for="firstName" class="block text-sm mb-2">First Name</label>
+                    <input type="text" name="firstName" class="border rounded w-full py-1 px-2">
+                </div>
+                <div class="w-full flex flex-col px-2 pb-3">
+                    <label for="lastName" class="block text-sm mb-2">Last Name</label>
+                    <input type="text" name="lastName" class="border rounded w-full py-1 px-2">
+                </div>
+                <div class="w-full flex flex-col px-2 pb-3">
+                    <label for="age" class="block text-sm mb-2">Age</label>
+                    <input type="number" name="age" class="border rounded w-full py-1 px-2">
+                </div>
+                <div class="w-full flex justify-center mt-2">
+                    <button type="submit"
+                        class="block text-sm py-1 px-2 bg-green-500 hover:bg-green-400 rounded text-white">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('../partials/foot') %>

@@ -1,0 +1,72 @@
+<%
+  const months = [
+    {
+      value: '01',
+      name: 'January',
+    },
+    {
+      value: '02',
+      name: 'February',
+    },
+    {
+      value: '03',
+      name: 'March',
+    },
+    {
+      value: '04',
+      name: 'April',
+    },
+    {
+      value: '05',
+      name: 'May',
+    },
+    {
+      value: '06',
+      name: 'June',
+    },
+    {
+      value: '07',
+      name: 'July',
+    },
+    {
+      value: '08',
+      name: 'August',
+    },
+    {
+      value: '09',
+      name: 'September',
+    },
+    {
+      value: '10',
+      name: 'October',
+    },
+    {
+      value: '11',
+      name: 'November',
+    },
+    {
+      value: '12',
+      name: 'December',
+    },
+  ];
+%>
+<h3 class="no-mb">Date Range</h2>
+<form action="/loans" method="get">
+  <select name="fromMonth" id="fromMonth" class="field">
+    <% for (let i = 0; i < months.length; i++) { %>
+        <option value="<%= months[i].value %>" <%= selectedFilterMonth.fromMonth === months[i].value ? 'selected' : '' %>>
+          <%= months[i].name %>
+        </option>
+    <% } %>
+  </select>
+  &nbsp;TO&nbsp;
+  <select name="toMonth" id="toMonth" class="field">
+    <% for (let i = 0; i < months.length; i++) { %>
+      <option value="<%= months[i].value %>" <%= selectedFilterMonth.toMonth === months[i].value ? 'selected' : '' %>>
+        <%= months[i].name %>
+      </option>
+    <% } %>
+  </select>
+  &nbsp;
+  <input type="submit" class="button" value="Filter">
+</form>

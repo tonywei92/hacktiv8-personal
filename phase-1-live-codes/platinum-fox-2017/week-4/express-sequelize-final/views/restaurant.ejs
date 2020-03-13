@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Restaurant</title>
+  </head>
+  <body>
+    <table style="width:100%">
+      <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Address</td>
+        <td>Action</td>
+      </tr>
+      <% for(let i=0; i<data.length; i++) { %>
+        <tr>
+          <td><%= data[i].id %></td>
+          <td><%= data[i].name %></td>
+          <td><%= data[i].address %></td>
+          <td><a href="/restaurants/<%= data[i].id %>/view_menu">View Menu</td>
+        </tr>
+      <% } %>
+    </table>
+
+  </body>
+</html>

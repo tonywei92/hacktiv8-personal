@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Comic Agung</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="container" id="app">
+    <!-- Logout button and notification for success / error event -->
+    <div id="logout-button" class="row my-3">
+      <button id="btn-logout" class="btn btn-primary ml-auto">Logout</button>
+    </div>
+
+    <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+      Email or Password wrong!!!
+    </div>
+
+    <!-- This is Login Form  -->
+    <div id="login-form">
+      <h1>Login</h1>
+      <form class="my-4">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" id="password" required />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+        <button id="register-button" type="button" class="btn btn-info">
+          Register
+        </button>
+      </form>
+    </div>
+
+    <!-- This is Register form -->
+    <div id="register-form">
+      <h1>Register</h1>
+      <form class="my-4">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="name" class="form-control" name="name" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" id="password" required />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+        <button id="random-user" type="button" class="btn btn-warning">
+          Random User
+        </button id>
+        <button id="login-button" type="button" class="btn btn-info">
+          Login
+        </button>
+      </form>
+    </div>
+
+    <!-- list -->
+    <div id="comic">
+      <h1>Comic Collection</h1>
+      <div class="row my-4">
+        <!-- Each of comic will have one of this card -->
+      </div>
+
+      <!-- This is form page to update a comic -->
+      <div id="comic-update">
+        <h1>Update Comic</h1>
+        <form class="my-4">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" type="text" class="form-control" name="title" />
+          </div>
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input id="author" type="text" class="form-control" name="author" />
+          </div>
+          <div class="form-group">
+            <label for="imageUrl">Comic Image URL</label>
+            <input id="imageUrl" type="text" class="form-control" name="imageUrl" />
+          </div>
+          <input id="comic-id-update" type="hidden">
+          <button id="btn-update" type="submit" class="btn btn-primary">
+            Submit
+          </button>
+        </form>
+        </di>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> -->
+  <script src="./js/app.js"></script>
+</body>
+
+</html>

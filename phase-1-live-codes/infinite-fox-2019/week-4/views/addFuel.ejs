@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+<div class="container my-4">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="mb-2">
+        Add Fuel into your <%= vehicle.name %>, Your car have <%= vehicle.fuel %> Litre Fuel right now
+      </h2>
+
+      <form action="/vehicles/<%= vehicle.id %>/addFuel" method="POST">
+        <% if (error) { %>
+        <div class="alert alert-danger my-2" role="alert">
+          <% error.forEach(error => { %>
+          <li><%= error %></li>
+          <% }) %>
+        </div>
+        <% } %>
+        <div class="form-group">
+          <label for="">Add Fuel</label>
+          <% generateFuel(vehicle.fuel, vehicle.maxFuel, vehicle.Gasoline.quota).forEach(fuel => { %>
+          <div class="form-check my-2">
+            <input type="radio" class="form-check-input" name="fuel" value="<%= fuel %>" />
+            <label class="form-check-label">
+              <%= fuel %> Litre
+            </label>
+          </div>
+          <% }) %>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Add Fuel to this car" />
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') %>

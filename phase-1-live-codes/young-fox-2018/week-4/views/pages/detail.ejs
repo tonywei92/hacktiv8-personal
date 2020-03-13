@@ -1,0 +1,16 @@
+<%- include('../partials/head.ejs') %> <%- include('../partials/navbar.ejs') %>
+<div class="container">
+  <%- include('../partials/alert.ejs', { validationErrors: validationErrors}) %>
+  <div class="row" style="margin-top: 14px">
+    <div class="col-4">
+      <div><%- include('../partials/card.ejs', { data: data })%></div>
+      <br>
+      <div><%- include('../partials/form.ejs', { id: data.id }) %></div>
+    </div>
+    <div class="col-6">
+      <h2>Reviews:</h2>
+      <%- include('../partials/group.ejs', { data: data.Reviews })%>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer.ejs') %>

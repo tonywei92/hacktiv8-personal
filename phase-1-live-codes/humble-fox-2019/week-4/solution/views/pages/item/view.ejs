@@ -1,0 +1,37 @@
+<%- include('../../partials/header') %>
+<h4>Item "<%= item.name %>"</h4>
+<table>
+    <tbody>
+        <tr>
+            <th>Condition</td>
+            <td><%= item.condition %></td>
+        </tr>
+        <tr>
+            <th>Price/Day</td>
+            <td><%= item.pricePerDay %></td>
+        </tr>
+    </tbody>
+</table>
+
+<h5>Logs</h5>
+<table>
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% item.Logs.forEach(log => {
+            %>
+        <tr>
+            <td><%= log.createdAt.toDateString() %></td>
+            <td><%= log.description %></td>
+        </tr>
+        <% }) %>
+
+    </tbody>
+</table>
+
+
+<%- include('../../partials/footer') %>

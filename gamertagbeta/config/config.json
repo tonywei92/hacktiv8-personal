@@ -1,0 +1,17 @@
+{
+  "production": {
+    "username": "uaqnwcgodhaqxz",
+    "password": "75cc6cc99d07ff2c000bbf75f6f7f917ec565a71b0c1ccc000801b63dbb334af",
+    "database": "d9jld56i4563qb",
+    "host": "ec2-107-21-104-31.compute-1.amazonaws.com",
+    "dialect": "postgres"
+  },
+  "development": {
+    "username": "homestead",
+    "password": "secret",
+    "database": "dbgamertag",
+    "host": "127.0.0.1",
+    "port": "54320",
+    "dialect": "postgres"
+  }
+}

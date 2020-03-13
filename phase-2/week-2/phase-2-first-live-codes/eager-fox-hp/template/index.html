@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Hogwarts All-Star</title>
+  <style>
+    .student-box:hover {
+      cursor: pointer;
+    }
+    .student-selected {
+      background-color: palegreen
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand h-100">Hogwarts All-Star</a>
+      <button class="btn btn-success">Logout</button>
+    </nav>
+    <div id="login-area" class="container mt-5">
+      <div class="row">
+        <div id="login-box" class="col-4 border mx-auto">
+          <h5 class="mt-2 text-center"> Login </h5>
+          <form class="row p-3">
+            <input class="w-100" type="email" placeholder="Email">
+            <input class="w-100 mt-2" type="password" placeholder="Password">
+            <input class="w-100 mt-5 btn btn-primary" type="submit" value="LOGIN">
+            <small class="text-danger">Error Login Infromation</small>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="app-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-7 d-flex flex-wrap">
+            <p class="col-12 text-danger">Error list students</p>
+            <div class="col-4 m-2 border p-2 student-selected">
+              <h6 class="mb-1">Harry Potter</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Hermione Granger</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Bill Weasley</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Ron Weasley</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Cedric Diggory</h6>
+              <p class="mb-0">Hufflepuff</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Harry Potter</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Hermione Granger</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Bill Weasley</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Ron Weasley</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Cedric Diggory</h6>
+              <p class="mb-0">Hufflepuff</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Harry Potter</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Hermione Granger</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Bill Weasley</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Ron Weasley</h6>
+              <p class="mb-0">Gryffindor</p>
+            </div>
+            <div class="col-4 m-2 border p-2">
+              <h6 class="mb-1">Cedric Diggory</h6>
+              <p class="mb-0">Hufflepuff</p>
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="sticky-top border p-3 mt-2">
+              <small class="text-danger">Error Player Information</small>
+              <div class="row mt-3">
+                <button class="btn btn-info btn-xs ml-3">Goalkeeper</button>
+                <button class="btn btn-info btn-xs ml-2">Chaser</button>
+                <button class="btn btn-info btn-xs ml-2">Beater</button>
+                <button class="btn btn-info btn-xs ml-2">Seeker</button>
+              </div>
+              <div class="mt-3">
+                <h5>Goalkeeper (1)</h5>
+                <div class="row m-2 border p-2 justify-content-between align-items-center">
+                  <p class="mb-0">Oliver Wood</p>
+                  <a class="btn btn-danger btn-xs text-white p-1"><small>remove</small></a>
+                </div>
+                <h5>Chaser (3)</h5>
+                <div class="row m-2 border p-2 justify-content-between align-items-center">
+                  <p class="mb-0">Angelina Jhonson</p>
+                  <a class="btn btn-danger btn-xs text-white p-1"><small>remove</small></a>
+                </div>
+                <h5>Beater (2)</h5>
+                <div class="row m-2 border p-2 justify-content-between align-items-center">
+                  <p class="mb-0">George Weasley</p>
+                  <a class="btn btn-danger btn-xs text-white p-1"><small>remove</small></a>
+                </div>
+                <h5>Seeker (1)</h5>
+                <div v-if="seeker" class="row m-2 border p-2 justify-content-between align-items-center">
+                  <p class="mb-0">Viktor Krum</p>
+                  <a class="btn btn-danger btn-xs text-white p-1"><small>remove</small></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

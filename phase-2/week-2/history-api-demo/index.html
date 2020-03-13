@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="gotoList">goto /list</button>
+    <button id="gotoFriends">goto /friends</button>
+    <div id="content"></div>
+</body>
+<script>
+    var gotoListBtn = document.getElementById("gotoList");
+    var gotoFriendsBtn = document.getElementById("gotoFriends");
+    var contentContainer = document.getElementById("content");
+
+    var data = {
+        "/friends": {content: "ini halaman friend"},
+        "/list": {content: "ini halaman list"}
+    }
+
+    function setContent(){
+        contentContainer.innerText = data[window.location.pathname].content;
+    }
+
+    window.onload = function(){
+        setContent()
+    }
+
+    gotoFriendsBtn.addEventListener("click", function(e){
+        history.pushState({}, "friends", "/friends")
+        setContent()
+    })
+
+    gotoListBtn.addEventListener("click", function(e){
+        history.pushState({}, "list", "/list")
+        setContent()
+    })
+</script>
+</html>

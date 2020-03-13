@@ -1,0 +1,13 @@
+{
+  "name": "cssflex-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "style": "sass src/styles/style.scss public/style.css",
+    "style:watch": "sass --watch src/styles/style.scss public/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>List Item dari company : <%= company.name %></h1>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Original Price</th>
+        <th>Qty</th>
+        <th>Item Type</th>
+        <th>Discount</th>
+        <th>Price After Discount</th>
+      </tr>
+      <% data.forEach(function(dt) {  %>
+        <tr>
+          <td><%= dt.id %></td>
+          <td><%= dt.name %></td>
+          <td><%= dt.original_price %></td>
+          <td><%= dt.qty %></td>
+          <td><%= dt.item_type %></td>
+          <td><%= dt.discount %></td>
+          <td><%= dt.price_after_discount() %></td>
+        </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

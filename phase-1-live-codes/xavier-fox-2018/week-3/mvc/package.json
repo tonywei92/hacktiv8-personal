@@ -1,0 +1,9 @@
+{
+  "name": "livecode-mvc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "sqlite3": "^4.0.2"
+  }
+}

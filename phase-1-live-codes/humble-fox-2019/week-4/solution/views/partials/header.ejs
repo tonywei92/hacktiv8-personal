@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        .flash {
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            margin: 8px;
+        }
+
+        .flash-success {
+            border: 2px solid #1EDD88;
+        }
+
+        .flash-warning {
+            border: 2px solid #FFC65A;
+        }
+
+        .flash-danger {
+            border: 2px solid #FD1015;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="/" class="brand-logo">LendApp</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/members">Members</a></li>
+                    <li><a href="/items">Items</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="/members">Members</a></li>
+        <li><a href="/items">Items</a></li>
+    </ul>
+
+    <div class="container">
+
+        <% if(messages.error){ %>
+        <%- include('../helpers/alert', {type:'danger', message: messages.error}) %>
+
+        <% }
+                if(messages.success){
+                 %>
+        <%- include('../helpers/alert', {type: 'success', message: messages.success}) %>
+        <%
+                }%>

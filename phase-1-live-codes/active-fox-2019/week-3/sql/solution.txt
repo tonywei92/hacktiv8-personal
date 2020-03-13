@@ -1,0 +1,67 @@
+/*
+  Release 0
+	Tampilkan jumlah  produk pada setiap gudang 
+	serta urutkan berdasarkan nama gudang dan jumlah product di yang tersedia
+*/
+
+SELECT 
+	Sto.name AS Warehouse,
+	products.name AS product,
+	SUM(PO.quantity) AS quantity
+FROM purchase_orders PO
+LEFT JOIN storages Sto
+	ON PO.storage_id = Sto.id
+LEFT JOIN products 
+	ON products.id = PO.product_id
+GROUP BY 
+	storage_id,
+	product_id
+Order BY
+	Sto.name ASC,
+	quantity DESC
+
+/*
+  Release 1
+	Tampilkan totap pembelian masing employee purchasing  
+	selama bulan desember 2018
+*/
+
+SELECT 
+	S.name Warehouse,
+	PO.purchasing_name Employee,
+	SUM(PO.quantity * PO.price)  total_purchase
+FROM purchase_orders PO
+LEFT JOIN Storages S
+ON 
+	S.id = PO.storage_id
+WHERE
+	PO.transaction_date LIKE '2018-12%'
+GROUP BY
+	S.id,
+	PO.purchasing_name
+
+/*
+Release 2
+Tampilkan jumlah pembelian dan total pembelian untuk setiap cabang perbulan dan perproduk yang dibeli
+*/
+
+SELECT
+	substr(PO.transaction_date, 0, 8) Date,
+	S.name Warehouse,
+	P.name AS product,
+	sum(PO.quantity) Jumlah,
+	sum(PO.price * PO.quantity) Total
+FROM 
+	purchase_orders PO
+LEFT JOIN
+	storages S
+ON
+	S.id = PO.storage_id
+LEFT JOIN
+	Products P
+ON
+	P.id = PO.product_id
+GROUP BY
+	substr(PO.transaction_date, 0, 8),
+	PO.storage_id,
+	PO.product_id

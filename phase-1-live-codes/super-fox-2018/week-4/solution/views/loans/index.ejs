@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+  <%- include('../partials/style') %>
+</head>
+<body>
+  <div class="container">
+    <%- include('../partials/header') %>
+    <%- include('add-a-loan-form', { books }) %>
+    <hr>
+    <%- include('filter-form', selectedFilterMonth) %>
+    <% if (loans.length) { %>
+      <table border="1" cellspacing="0">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Borrower's Name</th>
+            <th>Book Title</th>
+            <th>Due Date</th>
+            <th>Transaction Date</th>
+            <th>Returned</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i = 0; i < loans.length; i++) { %>
+              <tr>
+                <td><%= i + 1 %></td>
+                <td><%= loans[i].getNameWithTitle() %></td>
+                <td><%= loans[i].Book.title %></td>
+                <td><%= formatDate(loans[i].dueDate) %></td>
+                <td><%= formatDate(loans[i].createdAt) %></td>
+                <td><%= loans[i].returned ? 'Yes' : 'No' %></td>
+                <td width="90" class="text-center">
+                  <% if (!loans[i].returned) { %>
+                    <a href="/loans/<%= loans[i].id %>/return">Return</a>
+                  <% } %>
+                </td>
+              </tr>
+          <% } %>
+        </tbody>
+      </table>
+    <% } else { %>
+        <p class="text-center">No data.</p>
+    <% }%>
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<%- include('../../partials/header') %>
+<h4>People</h4>
+<div class="row">
+    <% members.forEach(member => {%>
+    <div class="col s6">
+        <%- include('../../helpers/cardMember', {member}) %>
+    </div>
+    <% }) %>
+
+</div>
+
+
+<%- include('../../helpers/fabAdd', {link: '/members/add'}) %>
+<%- include('../../partials/footer') %>

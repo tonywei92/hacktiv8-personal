@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Hacktiv8 Fox - First Live Code</title>
+</head>
+
+<body>
+  <div id="app">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">Favorites Album that make me stronger</a>
+        <a href="#" class="text-danger">Logout</a>
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row mb-3">
+          <div class="col-12">
+            <form action="" method="POST" @submit="login">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" v-model="email" class="form-control" name="email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" v-model="password" class="form-control" name="password">
+              </div>
+              <input type="submit" value="Login" class="btn btn-primary">
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col border border-primary mr-2">
+            <h1 class="text-center">Search Album</h1>
+            <div class="input-group mb-3">
+              <input type="text" v-model="artistName" class="form-control" placeholder="Artist Name"
+                aria-label="Album Title" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" @click.prevent="searchAlbum"
+                  id="button-addon2">Search</button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6 mb-3" v-for="album in albums" :key="album._id">
+                <div class="card">
+                  <div v-if="album.coverAlbum">
+                    <img v-bind:src="album.coverAlbum" class="card-img-top" />
+                  </div>
+                  <div v-else>
+                    <img
+                      src="https://rec-data.kalibrr.com/www.kalibrr.ph/logos/LUJD7AZSJQB8A6XTF3ZXZYZ287EFXYAR9SH2LMPU-5d0b4f48.png"
+                      class="card-img-top" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{album.albumTitle}}</h5>
+                    <p>{{ album.singer }} - {{ album.yearReleased }}</p>
+                    <a href="#" class="float-right" @click.prevent="addToMyFavorites(album)">
+                      <i class="fa fa-bookmark-o fa-2x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col border border-primary">
+            <h1 class="text-center">My Favorites</h1>
+            <div class="row">
+              <div class="col-6 mb-3" v-for="favorite in favorites" :key="favorite._id">
+                <div class="card">
+                  <img v-bind:src="favorite.coverAlbum" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ favorite.albumTitle }}</h5>
+                    <p>{{ favorite.singer }} - {{ favorite.yearReleased }}</p>
+                    <a href="#" class="float-right" @click.prevent="removeFromMyFavorites(favorite._id)">
+                      <i class="fa fa-ban fa-2x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

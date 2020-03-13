@@ -1,0 +1,28 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Flight Number</th>
+        <th scope="col"><a href="<%= createUrlQuery(hrefUrl, 'boardingTime', order)%>">Boarding Time</a></th>
+        <th scope="col"><a href="<%= createUrlQuery(hrefUrl, 'businessClassCost', order) %> ">Business Class</a></th>
+        <th scope="col"><a href="<%= createUrlQuery(hrefUrl, 'firstClassCost', order) %>">First Class</a></th>
+        <th scope="col"><a href="<%= createUrlQuery(hrefUrl, 'economyClassCost', order) %>">Economy Class</a></th>
+        <th scope="col">Airplane</th>
+        <th scope="col">Option</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% schedules.forEach((schedule, idx) => { %>
+        <tr>
+          <th scope="row"><%= idx + 1%></th>
+          <td><%= schedule.flightNumber%></td>
+          <td><%= getTimeFormat(schedule.boardingTime) %></td>
+          <td style="background-color: <%= getColorFormat(schedule.businessClassCost) %>"><%= currencyFormat(schedule.businessClassCost)%></td>
+          <td style="background-color: <%= getColorFormat(schedule.firstClassCost) %>"><%= currencyFormat(schedule.firstClassCost)%></td>
+          <td style="background-color: <%= getColorFormat(schedule.economyClassCost) %>"><%= currencyFormat(schedule.economyClassCost)%></td>
+          <td><%= schedule.airplane%></td>
+          <td><a href="/flightSchedules/<%= schedule.id %>">Detail</a></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>

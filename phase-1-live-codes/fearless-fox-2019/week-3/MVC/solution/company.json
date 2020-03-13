@@ -1,0 +1,14 @@
+[
+  {
+    "name" : "ABC",
+    "money":  1000000
+  },
+  {
+    "name" : "XYZ",
+    "money":  2000000
+  },
+  {
+    "name" : "microChip",
+    "money":  5000000
+  }
+]

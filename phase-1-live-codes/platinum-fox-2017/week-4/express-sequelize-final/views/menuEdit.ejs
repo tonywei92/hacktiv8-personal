@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Restaurant</title>
+  </head>
+  <body>
+    <form action="/menus/<%= data.id %>/edit" method="POST">
+      Name: <input type="text" name="name" value="<%= data.name %>">
+      <br>
+      Menu type:<input type="text" name="menu_type" value="<%= data.menu_type %>">
+      <br>
+      Rating: <input type="text" name="rating" value="<%= data.rating %>">
+      <br>
+      Price: <input type="text" name="price" value="<%= data.price %>">
+      <br>
+      Restaurant: <select name="RestaurantId">
+        <% for(let i=0; i<restaurants.length; i++) { %>
+          <option value="<%= restaurants[i].id %>"><%= restaurants[i].name %></option>
+        <% } %>
+      </select>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+
+  </body>
+</html>

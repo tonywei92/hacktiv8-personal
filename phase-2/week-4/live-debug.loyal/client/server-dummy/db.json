@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "name": "Armedi",
+      "msg": "saya mau datang ke konsernya",
+      "characterId": "1",
+      "id": 1
+    },
+    {
+      "name": "Semver",
+      "msg": "Wah saya mau ikut anda",
+      "characterId": "1",
+      "id": 2
+    },
+    {
+      "name": "AdielPratama",
+      "msg": "Ini idola saya",
+      "characterId": "2",
+      "id": 3
+    },
+    {
+      "name": "wikanyaa",
+      "msg": "lagunya bagus",
+      "characterId": "2",
+      "id": 4
+    },
+    {
+      "name": "Rubhi",
+      "msg": "Wahh saya official jadi wibu",
+      "characterId": "1",
+      "id": 5
+    },
+    {
+      "name": "tony",
+      "msg": "hello",
+      "characterId": "3",
+      "id": 6
+    }
+  ],
+  "songs": [
+    {
+      "name": "Melt",
+      "artist": "Ryo Supercell",
+      "characterId": 1,
+      "url": "https://www.youtube.com/embed/Qo2fm0oqxW0"
+    },
+    {
+      "name": "Packaged",
+      "artist": "Kz",
+      "characterId": 1,
+      "url": "https://www.youtube.com/embed/YtrjgafWLxM"
+    },
+    {
+      "name": "The World is Mine",
+      "artist": "Ryo Supercell",
+      "characterId": 1,
+      "url": "https://www.youtube.com/embed/NY__VTIUsiU"
+    },
+    {
+      "name": "Palette",
+      "artist": "Yuyoyuppe",
+      "characterId": 3,
+      "url": "https://www.youtube.com/embed/RcL61yziy7o"
+    },
+    {
+      "name": "No Logic",
+      "artist": "JimmyThumb-P",
+      "characterId": 3,
+      "url": "https://www.youtube.com/embed/-7QijddBQvg"
+    },
+    {
+      "name": "Double Lariat",
+      "artist": "Agoaniki-P",
+      "characterId": 3,
+      "url": "https://www.youtube.com/embed/RttS4XDBK08"
+    },
+    {
+      "name": "Yellow",
+      "artist": "Iroha",
+      "characterId": 2,
+      "url": "https://www.youtube.com/embed/T4iX144mEgI"
+    },
+    {
+      "name": "Meltdown",
+      "artist": "Iroha",
+      "characterId": 2,
+      "url": "https://www.youtube.com/embed/jrldXNpoaac"
+    }
+  ],
+  "characters": [
+    {
+      "id": 1,
+      "img": "https://pbs.twimg.com/profile_images/839675509365620738/SFpLpPSK_400x400.jpg",
+      "name": "Hatsune Miku",
+      "voice": "Saki Fujita",
+      "description": "She is a vocaloid software voicebank developed by Crypton Future Media and its official moe anthropomorph, a 16-year-old girl with long, turquoise twintails. She uses Yamaha Corporation Vocaloid 2, Vocaloid 3, and Vocaloid 4 singing synthesizing technologies."
+    },
+    {
+      "id": 2,
+      "img": "https://www.botlibre.com/avatars/a16967626.jpg",
+      "name": "Kagamine Rin",
+      "voice": "Asami Shimoda",
+      "description": "Kagamine Rin, sometimes referred to as Rin, are humanoid personas voiced by a singing synthesizer application developed by Crypton Future Media, headquartered in Sapporo, Japan. They use Yamaha Corporations Vocaloid 2 and Vocaloid 4 singing synthesizing technology."
+    },
+    {
+      "id": 3,
+      "img": "https://static.zerochan.net/Megurine.Luka.full.2483253.jpg",
+      "name": "Megurine Luka",
+      "voice": "Yuu Asakawa",
+      "description": "codenamed CV03, is a Japanese VOCALOID developed and distributed by Crypton Future Media, Inc., and was initially released in January 2009 for the VOCALOID2 engine. She is the third release of Cryptons Character Vocal Series and is a Character Voice VOCALOID."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+
+    <title>Daring Fox - First Live Code</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="/">From Nasa With Love</a>
+          <a href="#" class="text-danger">Logout</a>
+        </div>
+      </nav>
+      <div class="jumbotron">
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <h1 class="text-center">Random </h1>
+              <div class="card mt-2">
+                <div class="card-body">
+                  <h4 class="card-title">Title</h4>
+                  <h5>date</h5>
+
+                  <div>
+                    <!-- FOR VIDEO -->
+                    <iframe
+                      width="300"
+                      height="200"
+                      src="https://www.youtube.com/embed/HBhqr0KkntQ?rel=0">
+                    </iframe>
+
+                    <!-- FOR IMAGE -->
+                    <img
+                      style="width:300px!important; height:200px;"
+                      class="card-img-top"
+                      src="https://apod.nasa.gov/apod/image/1905/CarinaWideField_Willasch_1080.jpg"
+                      alt="Card image cap">
+                  </div>
+
+                  <p>Do you like this image?</p>
+                  <a
+                    class="btn btn-success"
+                    href="#"
+                    role="button">Yes, add this to My Favorites</a>
+                  <br><br>
+                  <a
+                    class="btn btn-danger"
+                    href="#"
+                    role="button">No, generate new image/video</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="container">
+                <h1 class="text-center">My Favorites</h1>
+                <div class="row">
+                  <div class="col-lg-5 mb-5">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title">Title favorite</h4>
+                        <h5> date </h5>
+                        <div>
+                          <!-- FOR VIDEO -->
+                          <iframe
+                            width="230"
+                            height="200"
+                            src="https://www.youtube.com/embed/HBhqr0KkntQ?rel=0">
+                          </iframe>
+
+                          <!-- FOR IMAGE -->
+                          <img
+                            style="width:230px!important; height:200px;"
+                            class="card-img-top"
+                            src="https://apod.nasa.gov/apod/image/1905/CarinaWideField_Willasch_1080.jpg"
+                            alt="Card image cap">
+                        </div>
+                        <a
+                          href="#"
+                          class="card-link text-danger">Remove</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

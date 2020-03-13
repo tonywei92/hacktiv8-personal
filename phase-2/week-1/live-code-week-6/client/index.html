@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  <title>My Quidditch Team</title>
+  <style>
+    .card:hover {
+      background-color: whitesmoke;
+    }
+  </style>
+</head>
+<body>
+  <!-- Notification for success / error event -->
+  <div id="alert" class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
+    Your notification message here.
+  </div>
+
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">QuidditchTeam</a>
+    <button class="btn btn-danger">Logout</button>
+  </nav>
+
+  <!-- Login Form -->
+  <div id="login-page" class="container mt-5 pages">
+    <div class="row">
+      <div class="col-4 border mx-auto">
+        <h2 class="mt-2 text-center" style="font-family: Arial, Helvetica, sans-serif;"> Login </h2>
+        <form class="row p-3">
+          <input class="form-control" type="email" placeholder="Email">
+          <input class="form-control mt-2" type="password" placeholder="Password">
+          <input class="form-control mt-5 btn btn-primary" type="submit" value="LOGIN">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Application Page -->
+  <div id="main-page" class="pages">
+    <div class="container">
+      <div class="row">
+        <div id="students-container" class="col-lg-8 col-6 d-flex flex-wrap mt-2 px-lg-0 py-lg-3 py-2" style="justify-content: space-evenly;">
+          <!-- Each student will have this card -->
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Cedric Diggory</h5>
+                <h6 class="card-subtitle mb-2 text-warning">Hufflepuff</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <!--------------------------------------------->
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Harry Potter</h5>
+                <h6 class="card-subtitle mb-2 text-danger">Gryffindor</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Terry Boot</h5>
+                <h6 class="card-subtitle mb-2 text-primary">Ravenclaw</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Draco Malfoy</h5>
+                <h6 class="card-subtitle mb-2 text-success">Slytherin</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Cedric Diggory</h5>
+                <h6 class="card-subtitle mb-2 text-warning">Hufflepuff</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Harry Potter</h5>
+                <h6 class="card-subtitle mb-2 text-danger">Gryffindor</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Cho Chang</h5>
+                <h6 class="card-subtitle mb-2 text-primary">Ravenclaw</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Severus Snape</h5>
+                <h6 class="card-subtitle mb-2 text-success">Slytherin</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Cedric Diggory</h5>
+                <h6 class="card-subtitle mb-2 text-warning">Hufflepuff</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Harry Potter</h5>
+                <h6 class="card-subtitle mb-2 text-danger">Gryffindor</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Cho Chang</h5>
+                <h6 class="card-subtitle mb-2 text-primary">Ravenclaw</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Draco Malfoy</h5>
+                <h6 class="card-subtitle mb-2 text-success">Slytherin</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Cedric Diggory</h5>
+                <h6 class="card-subtitle mb-2 text-warning">Hufflepuff</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Harry Potter</h5>
+                <h6 class="card-subtitle mb-2 text-danger">Gryffindor</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Cho Chang</h5>
+                <h6 class="card-subtitle mb-2 text-primary">Ravenclaw</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+          <div class="card shadow mt-lg-4 mt-3 col-lg-5 col-12" >
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title">Draco Malfoy</h5>
+                <h6 class="card-subtitle mb-2 text-success">Slytherin</h6>
+              </div>
+              <a href="#" class="card-link text-right">Add to Team</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-6  mt-lg-4 mt-3 px-lg-0 py-lg-3 py-2">
+          <div class="sticky-top border p-3 mt-2 bg-light">
+            <label for="position">Select position: </label>
+            <select id="position" class="form-control">
+              <option value="Goalkeeper">Goalkeeper</option>
+              <option value="Chaser">Chaser</option>
+              <option value="Beater">Beater</option>
+              <option value="Seeker">Seeker</option>
+            </select>
+            <div class="mt-3">
+              <h5>My Team</h5>
+              <ul id="players-container" class="list-group">
+                <!-- Each player will have xthis li element -->
+                <li class="d-flex flex-row list-group-item justify-content-between align-items-center">
+                  <div>
+                    <p class="my-0 font-weight-bold">Oliver Wood</p>
+                    <small class="text-muted">Goalkeeper</small>
+                  </div>
+                  <a href=""><i class="material-icons text-danger">delete</i></a>
+                </li>
+                <!-------------------------------------------------->
+                <li class="d-flex flex-row list-group-item justify-content-between align-items-center">
+                  <div>
+                    <p class="my-0 font-weight-bold">Angelina Johnson</p>
+                    <small class="text-muted">Chaser</small>
+                  </div>
+                  <a href=""><i class="material-icons text-danger">delete</i></a>
+                </li>
+                <li class="d-flex flex-row list-group-item justify-content-between align-items-center">
+                  <div>
+                    <p class="my-0 font-weight-bold">Alicia Spinnet</p>
+                    <small class="text-muted">Chaser</small>
+                  </div>
+                  <a href=""><i class="material-icons text-danger">delete</i></a>
+                </li>
+                <li class="d-flex flex-row list-group-item justify-content-between align-items-center">
+                  <div>
+                    <p class="my-0 font-weight-bold">Katie Bell</p>
+                    <small class="text-muted">Chaser</small>
+                  </div>
+                  <a href=""><i class="material-icons text-danger">delete</i></a>
+                </li>
+                <li class="d-flex flex-row list-group-item justify-content-between align-items-center">
+                  <div>
+                    <p class="my-0 font-weight-bold">George Weasley</p>
+                    <small class="text-muted">Beater</small>
+                  </div>
+                  <a href=""><i class="material-icons text-danger">delete</i></a>
+                </li>
+                <li class="d-flex flex-row list-group-item justify-content-between align-items-center">
+                  <div>
+                    <p class="my-0 font-weight-bold">Fred Weasley</p>
+                    <small class="text-muted">Beater</small>
+                  </div>
+                  <a href=""><i class="material-icons text-danger">delete</i></a>
+                </li>
+                <li class="d-flex flex-row list-group-item justify-content-between align-items-center">
+                  <div>
+                    <p class="my-0 font-weight-bold">Harry Potter</p>
+                    <small class="text-muted">Seeker</small>
+                  </div>
+                  <a href=""><i class="material-icons text-danger">delete</i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <script src="script/script.js"></script>
+</body>
+</html>

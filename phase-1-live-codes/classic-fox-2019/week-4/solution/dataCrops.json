@@ -1,0 +1,115 @@
+[
+  {
+    "name": "turnip",
+    "buy": 60,
+    "sell": 120,
+    "waterPoin": 0,
+    "waterToCrops": 10,
+    "SeasonId": 1
+  }, {
+    "name": "tomato",
+    "buy": 100,
+    "sell": 200,
+    "waterPoin": 0,
+    "waterToCrops": 12,
+    "SeasonId": 2
+  }, {
+    "name": "cucumber",
+    "buy": 80,
+    "sell": 160,
+    "waterPoin": 0,
+    "waterToCrops": 10,
+    "SeasonId": 1
+  }, {
+    "name": "pumpkin",
+    "buy": 250,
+    "sell": 500,
+    "waterPoin": 0,
+    "waterToCrops": 20,
+    "SeasonId": 2
+  }, {
+    "name": "sweetPotato",
+    "buy": 150,
+    "sell": 300,
+    "waterPoin":0,
+    "waterToCrops": 25,
+    "SeasonId": 3
+  }, {
+    "name": "strawberry",
+    "buy": 75,
+    "sell": 150,
+    "waterPoin":0,
+    "waterToCrops": 12,
+    "SeasonId": 1
+  }, {
+    "name": "eggplant",
+    "buy": 75,
+    "sell": 150,
+    "waterPoin": 0,
+    "waterToCrops": 12,
+    "SeasonId": 3
+  }, {
+    "name": "corn",
+    "buy": 150,
+    "sell": 300,
+    "waterPoin": 0,
+    "waterToCrops": 12,
+    "SeasonId": 2
+  }, {
+    "name": "greenPaper",
+    "buy": 200,
+    "sell": 400,
+    "waterPoin":0,
+    "waterToCrops": 18,
+    "SeasonId": 3
+  }, {
+    "name": "carrot",
+    "buy": 150,
+    "sell": 300,
+    "waterPoin":0,
+    "waterToCrops": 20,
+    "SeasonId": 3
+  }, {
+    "name": "potato",
+    "buy": 150,
+    "sell": 300,
+    "waterPoin":0,
+    "waterToCrops": 20,
+    "SeasonId": 1
+  }, {
+    "name": "pineapple",
+    "buy": 500,
+    "sell": 1000,
+    "waterPoin": 0,
+    "waterToCrops": 25,
+    "SeasonId": 2
+  }, {
+    "name": "spinach",
+    "buy": 50,
+    "sell": 100,
+    "waterPoin":0,
+    "waterToCrops": 10,
+    "SeasonId": 3
+  }, {
+    "name": "union",
+    "buy": 150,
+    "sell": 300,
+    "waterPoin":0,
+    "waterToCrops": 30,
+    "SeasonId": 2
+  }, {
+    "name": "cabbage",
+    "buy": 300,
+    "sell": 600,
+    "waterPoin": 0,
+    "waterToCrops": 20,
+    "SeasonId": 1
+  }, {
+    "name": "orangeCupFruit",
+    "buy": 1000,
+    "sell": 2000,
+    "waterPoin": 0,
+    "waterToCrops": 100,
+    "SeasonId": 4
+  }
+]

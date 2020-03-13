@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1 class="text-center my-4">List All Gasoline Sell on Pertamini</h1>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th class="text-right">Price</th>
+        <th class="text-right">Quota</th>
+        <th class="text-right">Total Car</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <% gasolines.forEach(gasoline => { %>
+    <tr>
+      <td><%= gasoline.id %></td>
+      <td><%= gasoline.name %></td>
+      <td class="text-right"><%= gasoline.price %></td>
+      <td class="text-right"><%= gasoline.quota %></td>
+      <td class="text-right"><%= gasoline.Vehicles.length %></td>
+      <td>
+        <a href="/gasolines/<%= gasoline.id %>" class="btn btn-outline-primary">Show All Car</a>
+      </td>
+    </tr>
+    <% }) %>
+  </table>
+</div>
+
+<%- include('partials/footer') %>

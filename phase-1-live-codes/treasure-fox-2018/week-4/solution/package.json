@@ -1,0 +1,24 @@
+{
+  "name": "rent-movies",
+  "version": "1.0.0",
+  "description": "Treasure Fox's Week 4 Live Code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/nodemon/bin/nodemon.js index.js",
+    "start": "node index.js"
+  },
+  "author": "Dimitri Wahyudiputra",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "pg": "^7.4.3",
+    "sequelize": "^4.37.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}

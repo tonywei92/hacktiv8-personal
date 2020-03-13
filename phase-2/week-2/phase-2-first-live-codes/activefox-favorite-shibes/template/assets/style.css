@@ -1,0 +1,70 @@
+* {
+  font-family: 'proxima-nova';
+}
+
+.background {
+  background-color: hsl(210, 36%, 96%);
+  min-height: 100vh;
+}
+
+.empty-favorite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-favorite img {
+  width: 85%;
+}
+
+.empty-favorite span {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: hsl(232, 33%, 77%);
+}
+.white {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-grey {
+  color: #606f7b;
+}
+
+.text-blue {
+  color: blue;
+}
+
+.right-border {
+  border-right: 1px solid hsl(210, 31%, 80%);
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  /* border-radius: 0.25rem; */
+}
+
+.list-none {
+  list-style: none;
+  padding: 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.display-none {
+  display: none;
+}
+
+.card-body {
+  padding: 0.5rem;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}

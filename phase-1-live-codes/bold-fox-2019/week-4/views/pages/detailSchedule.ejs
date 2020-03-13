@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include ../partials/head.ejs %>
+  <body>
+    <% include ../partials/navbar.ejs %>
+    <br>
+    <h1>Edit Schedule Flight</h1>
+    <br>
+    <h2>Flight Number: <%= schedule.flightNumber%></h2>
+    <%- include('../partials/form.ejs', { 
+      actionUrl, 
+      airplanes,
+      schedule 
+    }) %>
+    <% include ../lib/bootstrap4/script.ejs %>
+  </body>
+</html>

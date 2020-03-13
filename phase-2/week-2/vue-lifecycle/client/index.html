@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifecycle | Vue.js Demo</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Vue JS Lifecycle Demo</h1>
+        <ul>
+            <li :id="`item-${val}`" v-for="val in items">{{val}}</li>
+        </ul>
+        {{customMessage}}
+        <button @click="changeAngka">Ganti Angka</button>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message: "hello world",
+            items: [1,2,3,4,5],
+            angka: 0
+        },
+        beforeCreate: function(){
+            console.log('beforeCreate',this.message)
+            console.log(document.getElementById("app"))
+            console.log("\n")
+        },
+        created: function(){
+            console.log('created', this.message)
+            console.log(document.getElementById("app"))
+            console.log("\n")
+        },
+        mounted: function(){
+            console.log('mounted',this.message)
+            console.log(document.getElementById("app"))
+            console.log(document.getElementById("item-1"))
+            console.log("\n")
+            console.log(document.getElementById("item-3"))
+        },
+        computed: {
+            customMessage: function() {
+                console.log('computed customMessage called')
+                return this.angka + " this is custom message"
+            }
+        },
+        methods: {
+            changeAngka: function() {
+                this.angka = Math.random()
+            }
+        },
+        watch:{
+            angka: function() {
+                console.log('angka berubah')
+            }
+        }
+    })
+
+</script>
+</html>

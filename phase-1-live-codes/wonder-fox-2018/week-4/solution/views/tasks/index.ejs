@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body>
+  <div class="container">
+    <%- include('../partials/header') %>
+    <h2 class="mb-3">Tasks</h2>
+    <a href="/tasks/add" class="btn btn-primary mb-4">Add a Task</a>
+    <% if (tasks.length > 0) { %>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Points</th>
+                <th>Employee Name</th>
+                <th>Status</th>
+                <th class="text-center" width="240">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let i = 0; i < tasks.length; i++) { %>
+                  <% const task = tasks[i] %>
+                  <% const taskStatus = task.getStatus() %>
+                  <tr>
+                    <td><%= task.id %></td>
+                    <td><%= task.title %></td>
+                    <td><%= task.description %></td>
+                    <td><%= task.points %></td>
+                    <td><%= task.Employee.getFullName() %></td>
+                    <td>
+                      <% let spanColor = '' %>
+                      <% task.isComplete ? spanColor = 'text-success' : spanColor = 'text-danger' %>
+                      <span class="<%= spanColor %>"><%= taskStatus %></span>
+                    </td>
+                    <td class="text-right">
+                      <% if (!task.isComplete) { %>
+                          <a href="/tasks/<%= task.id %>/mark-as-completed" class="btn btn-sm btn-primary">
+                            Mark as completed
+                          </a>
+                          <a href="/tasks/<%= task.id %>/delete" class="btn btn-sm btn-danger">Delete</a>
+                      <% } %>
+                    </td>
+                  </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+        <% const previousState = currentPage === 1 ? 'disabled' : '' %>
+        <% const nextState = currentPage === pageCount ? 'disabled' : '' %>
+        <nav aria-label="Pagination">
+          <ul class="pagination">
+            <li class="page-item <%= previousState %>">
+              <a class="page-link" href="/tasks?page=<%= currentPage - 1 %>">Previous</a>
+            </li>
+          <% for (let i = 1; i <= pageCount; i++) { %>
+              <% const paginationStatus = i === currentPage ? 'active' : ''  %>
+              <li class="page-item <%= paginationStatus %>">
+                <a class="page-link" href="/tasks?page=<%= i %>"><%= i %></a>
+              </li>
+          <% } %>
+            <li class="page-item <%= nextState %>">
+              <a class="page-link" href="/tasks?page=<%= currentPage + 1 %>">Next</a>
+            </li>
+          </ul>
+        </nav>
+    <% } %>
+  </div>
+  <%- include('../partials/scripts') %>
+</body>
+</html>

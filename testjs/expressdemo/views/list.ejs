@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Daftar Student</h1>
+    <ul>
+    <% for(let i = 0; i<students.length; i++){ %>
+        <li><%= students[i].name %>,
+            <%= students[i].age %>,
+            <%= students[i].gender %>
+            | <a href="/students/<%= students[i].id %>/delete">delete</a>
+        </li>    
+    <% } %>
+    </ul>
+
+    <a href="/students/add">Tambah</a>
+</body>
+</html>

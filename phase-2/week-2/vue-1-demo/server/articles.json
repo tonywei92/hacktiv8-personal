@@ -1,0 +1,94 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Shampoo 138511",
+      "description": "sollicitudin mi sit amet lobortis",
+      "author": "Esta Lamball",
+      "body": "risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in",
+      "updated_at": "4/27/2019",
+      "featured_image": "http://dummyimage.com/1089x720.jpg/ff4444/ffffff"
+    },
+    {
+      "id": 2,
+      "title": "Kronos",
+      "description": "accumsan tortor quis turpis sed ante",
+      "author": "Tyler Stones",
+      "body": "donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non",
+      "updated_at": "11/11/2019",
+      "featured_image": "http://dummyimage.com/1093x720.jpg/cc0000/ffffff"
+    },
+    {
+      "id": 3,
+      "title": "Mo' Money",
+      "description": "pede justo eu massa donec",
+      "author": "Joelynn Kirk",
+      "body": "a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue",
+      "updated_at": "4/19/2019",
+      "featured_image": "http://dummyimage.com/1180x720.jpg/5fa2dd/ffffff"
+    },
+    {
+      "id": 4,
+      "title": "Man Apart, A",
+      "description": "luctus ultricies eu nibh quisque id",
+      "author": "Laurena Tingey",
+      "body": "ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer",
+      "updated_at": "3/10/2019",
+      "featured_image": "http://dummyimage.com/1187x720.jpg/cc0000/ffffff"
+    },
+    {
+      "id": 5,
+      "title": "Directed by John Ford",
+      "description": "nunc viverra dapibus nulla suscipit ligula",
+      "author": "Saloma Tonepohl",
+      "body": "purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar",
+      "updated_at": "2/27/2019",
+      "featured_image": "http://dummyimage.com/1194x720.jpg/cc0000/ffffff"
+    },
+    {
+      "id": 6,
+      "title": "Princess of Mars",
+      "description": "velit eu est congue elementum in hac habitasse",
+      "author": "Ailene McCleverty",
+      "body": "faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper",
+      "updated_at": "1/17/2020",
+      "featured_image": "http://dummyimage.com/1203x720.jpg/dddddd/000000"
+    },
+    {
+      "id": 7,
+      "title": "Just One of the Girls",
+      "description": "blandit non interdum in ante vestibulum ante",
+      "author": "Peria Sisley",
+      "body": "etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum",
+      "updated_at": "6/9/2019",
+      "featured_image": "http://dummyimage.com/1239x720.jpg/5fa2dd/ffffff"
+    },
+    {
+      "id": 8,
+      "title": "Judith of Bethulia",
+      "description": "elit sodales scelerisque mauris sit",
+      "author": "Jackie Steptoe",
+      "body": "odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia",
+      "updated_at": "4/29/2019",
+      "featured_image": "http://dummyimage.com/1155x720.jpg/dddddd/000000"
+    },
+    {
+      "id": 9,
+      "title": "Tribute",
+      "description": "penatibus et magnis dis parturient",
+      "author": "Saidee Ducker",
+      "body": "quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere",
+      "updated_at": "3/9/2019",
+      "featured_image": "http://dummyimage.com/1091x720.jpg/cc0000/ffffff"
+    },
+    {
+      "id": 10,
+      "title": "Johnny Stecchino",
+      "description": "nulla pede ullamcorper augue a suscipit",
+      "author": "Portia Rydzynski",
+      "body": "at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus",
+      "updated_at": "1/30/2020",
+      "featured_image": "http://dummyimage.com/1071x720.jpg/cc0000/ffffff"
+    }
+  ]
+}

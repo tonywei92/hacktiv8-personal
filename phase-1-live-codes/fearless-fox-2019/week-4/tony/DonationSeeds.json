@@ -1,0 +1,11 @@
+[
+  {
+    "name": "John",
+    "totalDonation": 1000000,
+    "paidDate": "2019-04-31",
+    "message": "Semoga bermanfaat",
+    "paid": true,
+    "virtualAccount": "5555-3-John",
+    "campaignId": 3
+  }
+]

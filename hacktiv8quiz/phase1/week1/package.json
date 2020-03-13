@@ -1,0 +1,15 @@
+{
+  "name": "hacktiv8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "array_of_objects.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "terminal-kit": "^1.28.0"
+  }
+}

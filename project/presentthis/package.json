@@ -1,0 +1,25 @@
+{
+  "name": "presentthis",
+  "version": "1.0.0",
+  "description": "Present you markdowns files like powerpoint",
+  "main": "index.js",
+  "preferGlobal": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "presentthis": "index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ansi-escape": "^1.1.0",
+    "ansi-escapes": "^4.2.1",
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.8.17",
+    "chalk": "^2.4.2",
+    "front-matter": "^3.0.2",
+    "marked": "^0.7.0",
+    "marked-terminal": "^3.3.0"
+  }
+}

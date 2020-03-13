@@ -1,0 +1,4 @@
+{
+    "theme" : "hide-semicolons.js",
+    "linenos": true|false
+}

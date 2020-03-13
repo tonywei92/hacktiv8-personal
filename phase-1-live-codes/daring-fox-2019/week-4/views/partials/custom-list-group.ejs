@@ -1,0 +1,13 @@
+<div class="list-group">
+    <% reports.forEach((report) => { %>
+      <a href="/reports/<%= report.id %>" class="list-group-item list-group-item-action flex-column align-items-start" style="background-color: <%= getStatusColor(report.status) %>">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1"><%= report.title %></h5>
+          <small class="text-muted"><%= getDifferenceDate(report.judgementDate)%></small>
+        </div>
+        <p class="mb-1"><%= report.description %></p>
+        <small class="text-muted">Prosecutor: <%= report.prosecutor %></small>
+      </a>
+      <br>
+    <% }) %>
+  </div>

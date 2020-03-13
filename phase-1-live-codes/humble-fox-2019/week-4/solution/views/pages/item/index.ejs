@@ -1,0 +1,50 @@
+<%- include('../../partials/header') %>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Condition</th>
+            <th>RentPrice/day</th>
+            <th>Rented</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% 
+        items.forEach(item => {
+            %>
+        <tr>
+            <td><a href="/items/<%= item.id %>"><%= item.name %></a></td>
+            <td><%= item.condition %></td>
+            <td><%= item.pricePerDay %></td>
+            <td><% if(item.Member) {
+                %>
+                Rented by <%= item.name %> on <%= item.rentedOn.toDateString()  %>
+                <%
+                }else{
+                 %>
+                Available
+                <%
+                }%>
+            </td>
+            <td>
+                <% if(item.Member) {
+                %>
+                <a class="waves-effect waves-teal btn" href="/items/<%=item.id%>/return">Return</a>
+                <%
+                }else{
+                 %>
+                <a class="waves-effect waves-teal btn" href="/items/<%= item.id %>/rent">Rent</a>
+                <%
+                }%>
+                <a href="/items/<%=item.id%>/delete">Delete</a></td>
+        </tr>
+        <%
+        })
+        %>
+
+
+    </tbody>
+</table>
+<%- include('../../partials/footer') %>

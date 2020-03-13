@@ -1,0 +1,14 @@
+<div class="row justify-content-center">
+  <div class="col-8 mb-5">
+    <% if (!resto) { %>
+    <div class="alert alert-info" role="alert">
+      Restaurant not found
+    </div>
+    <% } else { %>
+    <h4><%= resto.name %>, <%= resto.location %></h4>
+    <p><em><%= resto.description %></em></p>
+    <p class="mt-5">Fill the form to create a new event here</p>
+    <%- include('../partials/bukberForm', { mode: 'add', actionLink:`/schedules/add/${resto.id}` }) %>
+    <% } %>
+  </div>
+</div>

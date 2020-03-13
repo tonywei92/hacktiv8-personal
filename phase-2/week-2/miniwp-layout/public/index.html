@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <title>MiniWP</title>
+</head>
+
+<body class="text-teal-900 h-full">
+    <div class="flex flex-col h-full">
+        <div class="flex text-white bg-blue-700 pr-4">
+            <div class="w-1/2 flex items-center">
+                <div class="bg-blue-800 h-full pr-2 my-2 pl-4">
+                    <a href="#" class=" h-full flex items-center">
+                        <span class="jam jam-wordpress text-xl"></span>&nbsp;<span>MySites</span>
+                    </a>
+                </div>
+                <div class="bg-blue-700 h-full">
+                    <a href="#" class="h-full flex ml-4 bg-blue-700 items-center">
+                        <span class="jam jam-newspaper text-xl"></span> <span class="pl-1">Reader</span>
+                    </a>
+                </div>
+            </div>
+            <div class="w-1/2 flex justify-end">
+                <a href="#" class="text-blue-800 bg-white border py-1 px-3 rounded my-1"><span
+                        class="jam jam-document text-xl"></span><span class="ml-1">Write</span></a>
+            </div>
+        </div>
+        <div class="flex h-full text-sm flex-col md:flex-row">
+            <div class="py-2 md:border-r border-0 border-gray-400 w-full" style="width: 23rem;">
+                <div class="mb-4 pl-4 font-bold text-teal-800">Manage</div>
+                <ul>
+                    <li>
+                        <a href="#" class="py-4 px-6 block hover:bg-gray-100">
+                            <span class="jam jam-document mr-1 text-lg"></span> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="py-4 px-6 block hover:bg-gray-100 flex justify-between">
+                            <div class="flex items-center">
+                                <span class="jam jam-ordered-list mr-1 text-lg"></span>
+                                <span>Posts</span>
+                            </div>
+                            <div>
+                                <div class="border px-1 rounded text-xs">100</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="py-4 px-6 block hover:bg-gray-100">
+                            <span class="jam jam-building mr-1 text-lg"></span>
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-full h-full bg-gray-100 py-6">
+                <div class="w-full flex justify-center pb-6">
+                    <div class="w-10/12">
+                        <div
+                            class="w-full bg-white px-4 rounded border border-gray-400 flex items-center justify-between mb-4">
+                            <a href="#" class="border-b-2 border-gray-800 inline-block px-2 pt-3 pb-2">
+                                Published
+                            </a>
+                            <form action="">
+                                <input class="outline-none" name="q" type="text" placeholder="Search">
+                                <button type="submit"><span class="jam jam-search text-xl"></span></button>
+                            </form>
+                        </div>
+
+                        <div class="w-full bg-white rounded border border-gray-400 flex">
+                            <ul class="w-full">
+                                <li class="p-4 flex justify-between">
+                                    <div class="flex flex-col">
+                                        <div class="text-lg">Journey Begin</div>
+                                        <div class="text-sm text-gray-500">7 minutes ago</div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <img class="w-24"
+                                            src="https://cache.desktopnexus.com/thumbseg/1526/1526091-bigthumbnail.jpg"
+                                            alt="">
+                                        <a href="#" class="pl-4 text-lg font-bold">...</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex justify-center">
+                    <div class="w-10/12">
+                        <div id="editor">
+                            <p>Hello World!</p>
+                            <p>Some initial <strong>bold</strong> text</p>
+                            <p><br></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="/app.js"></script>
+
+</html>

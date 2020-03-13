@@ -1,0 +1,30 @@
+-- release 0
+
+SELECT Name, Revenue, NetProfit, (100.0 * NetProfit / Revenue) || "%" AS ProfitMargin, ExecutiveSalary
+	FROM Companies
+ORDER BY (100.0 * NetProfit / Revenue) DESC
+
+
+-- release 1
+
+SELECT Name, COUNT(*) AS NumberOfYoungExecutives
+	FROM Companies
+		LEFT JOIN CompanyPeople
+			ON Companies.id = CompanyPeople.CompanyId
+		LEFT JOIN People
+			ON CompanyPeople.ExecutiveId = People.id
+WHERE People.Age < 35
+GROUP BY Companies.id
+ORDER BY Name
+
+-- release 2
+
+SELECT FirstName || ' ' || LastName AS FullName, Age, Phone, SUM(ExecutiveSalary) AS TotalSalary
+	FROM People
+		LEFT JOIN CompanyPeople
+			ON People.id = CompanyPeople.ExecutiveId
+		LEFT JOIN Companies
+			ON CompanyPeople.CompanyId = Companies.id
+GROUP BY People.id
+HAVING TotalSalary > 250000
+ORDER BY AGE

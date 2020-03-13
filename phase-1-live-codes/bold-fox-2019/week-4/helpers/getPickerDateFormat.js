@@ -1,0 +1,1 @@
+module.exports = (date) => date ? date.toISOString().slice(0, 16) : ""

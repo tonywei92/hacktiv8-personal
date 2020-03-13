@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home | HacktivGit Client</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="need-login">
+    <div class="flex justify-center py-4 login-container">
+        <a class="bg-blue-500 text-white p-5 rounded hover:bg-blue-400 text-2xl shadow-md"
+            href="https://github.com/login/oauth/authorize?client_id=8b13a57573894745446f">Github Login</a>
+    </div>
+    <div class="main-container">
+        <div class="flex bg-blue-500 text-white">
+            <div class="w-1/2">
+                <h1 class="text-xl font-bold m-0 p-4">UberGit</h1>
+            </div>
+            <div class="w-1/2 text-right">
+                <div id="user" class="flex justify-end items-center h-full">
+                    <div class="loadingio-spinner-dual-ring-9wuaduz12t">
+                        <div class="ldio-ac5emojjddk">
+                            <div></div>
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="flex p-4 -m-2">
+            <div class="w-3/12 p-2">
+                <div class="border border-indigo-200 p-2">
+                    <h2 class="text-lg pb-2">Users</h2>
+                    <ul id="owners" class="leading-relaxed">
+
+                    </ul>
+                </div>
+            </div>
+            <div class="w-3/12 p-2">
+                <div class="border border-indigo-200 p-2">
+                    <form action="" method="GET" id="search-repo">
+                        <input class="border border-blue-200 rounded p-2 w-full mb-2" type="text" name="search"
+                            placeholder="Search...">
+                    </form>
+                    <ul id="repos" class="leading-relaxed"></ul>
+                </div>
+            </div>
+            <div class="w-6/12 p-2">
+                <div class="border border-indigo-200 p-2">
+                    <h2 class="text-lg pb-2">Readme.md:</h2>
+                    <div id="readme" class="leading-relaxed"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="/script.js"></script>
+
+</html>

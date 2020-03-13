@@ -1,0 +1,20 @@
+<%- include('../partials/head') %>
+
+<br>
+full name: <%= member.getFullname() %>
+<br>
+type: <%= member.type %> <% if(member.type == 'free') { %> <a href="/members/<%= member.id %>/upgradeMembership">upgrade membership</a> <% } %>
+<br>
+level: <%= member.getLevel() %>
+<br>
+exp: <%= member.exp %> <a href="/members/<%= member.id %>/addexp">add exp</a>
+<br>
+<form method="post">
+  <label>Tag
+    <input type="text" name="tagname">
+  </label>
+  <br>
+  <input type="submit">
+</form>
+
+<a href="/members/<%= member.id %>/delete">delete</a>

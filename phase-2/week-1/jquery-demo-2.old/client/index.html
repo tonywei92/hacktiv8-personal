@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>My Todo list</h1>
+    <form action="">
+        <h3>Add new todo</h3>
+        <br>
+        <input type="text" placeholder="Name" id ="input-todo-name">
+        <br>
+        <input type="submit" value="Add">
+    </form>
+    <ul id="todo_list">
+
+    </ul>
+
+    <!-- Script here -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+
+        const todosArr = [
+            {
+                id: 1,
+                name: "Make some breakfast",
+                done: false,
+            },
+            {
+                id: 2,
+                name: "Hunt a monster",
+                done: false
+            }
+        ]
+
+        function loadTodosArrToDom() {
+            $.each(todosArr, (index, todo) =>{
+                var $todo = $(`<li>${todo.name}</li>`)
+                var $doneChecbox = $(`<input type="checkbox" ${todo.done? "checked": ""} />`)
+                $doneChecbox.on("click", function(e){
+                    console.log(todo.id)
+                })
+
+                $todo.append($doneChecbox)
+                $("#todo_list")
+                    .append($todo)
+            })  
+        }
+
+        $('document').ready(function () {
+            loadTodosArrToDom()
+        })
+
+
+    </script>
+</body>
+
+</html>

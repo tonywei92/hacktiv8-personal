@@ -1,0 +1,8 @@
+<% if (messages.validationErrors) { %>
+    <ul style="margin-left: 15px; color: red">
+      <% for (let i = 0; i < messages.validationErrors.length; i++) { %>
+          <li><%= messages.validationErrors[i].message %></li>
+      <% } %>
+    </ul>
+    <br>
+<% } %>

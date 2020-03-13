@@ -1,0 +1,7 @@
+.ql-toolbar.ql-snow, .ql-container {
+    background-color: #fff;
+}
+.ql-container {
+    min-height: 16rem;
+    height: unset;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Player</td>
+                <td>Birthday</td>
+                <td>Money</td>
+                <td>Day Played</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i<farms.length;i++){ %>
+            <tr>
+                <td><%= farms[i].id %></td>
+                <td><%= farms[i].farmName %></td>
+                <td><%= farms[i].playerName %></td>
+                <td><%= farms[i].birthDayDate %></td>
+                <td><%= farms[i].money %></td>
+                <td><%= farms[i].fullDayPlayed  %></td>
+                <td><a href="/farms/<%= farms[i].id %>">Look at farm</a></td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+
+</html>

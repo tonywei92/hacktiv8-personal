@@ -1,0 +1,14 @@
+{
+  "name": "mvc-callback-sqlite3",
+  "version": "1.0.0",
+  "description": "Pada challenge kali ini kamu diwajibkan untuk membuat code dalam struktur `MVC`, menggunakan database `SQLite` dan package `node-sqlite3` / `npm sqlite3`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dimitri Wahyudiputra",
+  "license": "MIT",
+  "dependencies": {
+    "sqlite3": "^4.0.2"
+  }
+}

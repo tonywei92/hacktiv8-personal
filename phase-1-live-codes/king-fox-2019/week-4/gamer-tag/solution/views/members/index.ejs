@@ -1,0 +1,83 @@
+<%- include('../partials/head') %>
+
+<div>
+    <div class="container mx-auto px-4 lg:px-0">
+        <div class="flex justify-center">
+
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container mx-auto mb-8 mt-8 flex justify-end px-4 lg:px-0">
+        <a href="/raw/members" class="bg-orange-500 shadow hover:bg-orange-400 rounded text-white py-1 px-2 mx-1">Raw
+            Members</a>
+        <a href="/raw/tags" class="bg-orange-500 shadow hover:bg-orange-400 rounded text-white py-1 px-2 mx-1">Raw
+            Tags</a>
+        <a href="/members/add"
+            class="border shadow bg-blue-500 hover:bg-blue-400 text-white py-1 px-2 rounded uppercase"><span
+                class="jam jam-plus"></span>
+            New
+            member</a>
+    </div>
+    <div>
+        <div class="container mx-auto px-4 lg:px-0">
+            <div class="flex justify-center mb-8">
+                <a href="/members"
+                    class="py-1 px-2 mr-1 text-sm rounded shadow border <%= gold?"bg-gray-200": "bg-green-200 border-green-500" %>">ALL
+                    MEMBERS</a>
+                <a href="/members/?gold=1"
+                    class="py-1 px-2 ml-1 text-sm rounded shadow border <%= gold?"bg-green-200 border-green-500":"bg-gray-200" %>">GOLD
+                    MEMBERS</a>
+            </div>
+            <% if(members.length === 0){ 
+                if(gold){%>
+            <p>No gold members, offer to upgrade some tag</p>
+            <% } else {%>
+            <p>No members, add new member with above button</p>
+            <% }
+            } 
+            else {%>
+
+            <div class="flex flex-wrap w-full lg:md:-mx-2">
+                <% members.forEach(member => {  %>
+                <div class="md:px-2 flex w-full md:w-6/12 lg:w-4/12 xl:w-3/12 mb-4">
+                    <div class="p-4 card w-full flex">
+                        <div class="relative h-20">
+                            <div class="w-16 h-16 bg-blue-500 rounded-full overflow-hidden">
+                                <img class="w-full h-16"
+                                    src="https://avatars.dicebear.com/v2/male/<%= member.username %>.svg" alt="">
+                            </div>
+                            <div
+                                class="absolute bottom-0 py-0 px-2 bg-black rounded text-xs w-full text-center text-white">
+                                <span>Lv.&nbsp;<%= member.level %></span>
+                            </div>
+                        </div>
+                        <div class="flex-1 pl-4">
+                            <p class="mb-2"><a href="/members/<%= member.id %>"
+                                    class="text-blue-500 hover:text-blue-400 text-sm"><%= member.username %></a>
+                                <span class="text-light text-white bg-<%= getMemberColor(member.type) %>-500 text-xs p-1 rounded
+                                    uppercase"><%= member.type %></span>
+                            </p>
+                            <% if(member.Tags.length === 0) {%>
+                            <div>
+                                <i class="text-thin text-xs text-gray-500">no tags yet</i>
+                            </div>
+                            <% }
+                            else { %>
+                            <% member.Tags.forEach(tag => { %>
+                            <%- include('../components/tag', {name: tag.name}) %>
+                            <% }) %>
+                            <% }%>
+                        </div>
+                    </div>
+
+                </div>
+
+                <% })%>
+            </div>
+            <% }%>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/foot') %>

@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+
+<br>
+<a href="/members/raw/members">raw members</a>
+<br>
+<a href="/members/raw/tags">raw tags</a>
+<br>
+<a href="/members/add/">add member</a>
+<br>
+<hr>
+<br>
+<a href="/members/">all members</a>
+<br>
+<a href="/members/?gold=1">gold members</a>
+<br>
+<hr>
+<br>
+<ul>
+  <% for(let i in members) { %>
+  <li>
+    <ul>
+      <li><a href="/members/<%= members[i].id%>"><%= members[i].username %></a></li>
+      <li><%= goldMarker(members[i].type) %></li>
+      <% for(let j in members[i].Tags) { %>
+      <li><%= members[i].Tags[j] %></li>
+      <% } %>
+    </ul>
+  </li>
+  <% } %>
+</ul>

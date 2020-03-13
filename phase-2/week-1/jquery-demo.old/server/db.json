@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "dimas",
+      "age": 17
+    },
+    {
+      "name": "Audrick",
+      "age": "12",
+      "id": 2
+    },
+    {
+      "name": "SCTV",
+      "age": "50",
+      "id": 3
+    },
+    {
+      "name": "SATE AYAM",
+      "age": "12",
+      "id": 4
+    }
+  ]
+}

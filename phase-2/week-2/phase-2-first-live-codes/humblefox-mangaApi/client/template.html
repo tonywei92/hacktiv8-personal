@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Humble Manga</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
+
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 col-md-7 py-4">
+                <h4 class="text-white">About</h4>
+                <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+              </div>
+              <div class="col-sm-4 offset-md-1 py-4">
+                <h4 class="text-white">Contact</h4>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                  <li><a href="#" class="text-white">Like on Facebook</a></li>
+                  <li><a href="#" class="text-white">Email me</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+          <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              <strong>Humble Manga</strong>
+            </a>
+            <div class="ml-auto">
+              <button class="btn btn-danger">Logout</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      <main role="main">
+        <section class="jumbotron text-center">
+          <div class="container">
+            <h1 class="jumbotron-heading">Humble Manga</h1>
+            <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+            <p>
+              <a  href="#" class="btn btn-primary my-2">All Manga</a>
+              <a  href="#" class="btn btn-secondary my-2">My Collection</a>
+            </p>
+          </div>
+        </section>
+        
+         <!-- This is mainpage -->
+         <div class="alert alert-success mx-4 my-2" role="alert">
+          put your success notification here
+        </div>
+        <div class="alert alert-danger mx-4 my-2" role="alert">
+          put your fail notification here
+        </div>
+
+        <!-- This is Login Form -->
+        <div id="loginForm" class="col-4 mx-auto my-4">
+          <form >
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        
+        <!-- This page show up when you successfully login -->
+        <div class="album py-5 bg-light">        
+          <div class="container">
+            <div class="row">
+              <!-- This is mangacards -->
+              <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" style="width: 100%;
+                  height: 15vw;
+                  object-fit: cover;object-position: left top;" src="" >
+                  <div class="card-body">
+                    <p class="card-text">Your manga title here</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Add to my collection</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- This page show up when you click my collection -->
+        <div class="album py-5 bg-light">
+          <div class="container">
+            <h1>Your Manga Collection :</h1>
+            <div class="row">
+                <div class="col-md-4" >
+                  <div class="card mb-4 box-shadow">
+                    <div class="card-body">
+                      <h3>Your manga title here</h3>
+                      <h5>author: </h5>
+                      <p class="card-text bg-primary text-white">Chapters Length: </p>
+                      <p class="card-text"></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Remove</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+
+    <!-- core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  
+  </body>
+</html>

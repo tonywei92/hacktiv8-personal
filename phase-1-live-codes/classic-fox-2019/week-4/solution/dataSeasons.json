@@ -1,0 +1,19 @@
+[
+  {
+    "name": "spring",
+    "income": 0,
+    "outcome": 0
+  }, {
+    "name": "summer",
+    "income": 0,
+    "outcome": 0
+  }, {
+    "name": "fall",
+    "income": 0,
+    "outcome": 0
+  }, {
+    "name": "hothouse",
+    "income": 0,
+    "outcome": 0
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Bohemian Rhapsody",
+    "duration": 121,
+    "synopsis": "Incididunt irure enim dolor cillum incididunt quis commodo tempor ea. Ea Lorem enim eiusmod cillum qui proident ut.",
+    "createdAt": "2016-06-10:00:00.000Z"
+  },
+  {
+    "title": "Hanum dan Rangga",
+    "duration": 91,
+    "synopsis": "Reprehenderit magna tempor nostrud occaecat. Dolore labore ad elit laboris anim id magna mollit eu ad tempor ullamco quis non.",
+    "createdAt": "2016-02-21T00:00:00.000Z"
+  },
+  {
+    "title": "Robocop",
+    "duration": 151,
+    "synopsis": "Sint nostrud sunt ut anim ut cupidatat sunt in exercitation laboris consequat ex dolor sint. Id officia sunt do consequat fugiat voluptate.",
+    "createdAt": "2016-05-14T00:00:00.000Z"
+  },
+  {
+    "title": "A Man Called Ahok",
+    "duration": 91,
+    "synopsis": "Non enim incididunt consectetur aute adipisicing culpa excepteur culpa fugiat adipisicing dolor. Quis ex magna nostrud incididunt ad.",
+    "createdAt": "2014-08-19T00:00:00.000Z"
+  },
+  {
+    "title": "First Man",
+    "duration": 120,
+    "synopsis": "Velit fugiat eu fugiat eu ad occaecat ut officia esse duis. Est et enim eiusmod dolor reprehenderit id quis.",
+    "createdAt": "2015-03-20T00:00:00.000Z"
+  },
+  {
+    "title": "La La Land",
+    "duration": 100,
+    "synopsis": "Veniam ex tempor Lorem non adipisicing pariatur nostrud nostrud magna.",
+    "createdAt": "2016-10-01T00:00:00.000Z"
+  },
+  {
+    "title": "Tersanjung 1",
+    "duration": 123,
+    "synopsis": "Eiusmod enim magna est aliquip ea consequat culpa amet ad reprehenderit dolore consectetur elit commodo.",
+    "createdAt": "2015-01-09T00:00:00.000Z"
+  },
+  {
+    "title": "Tersanjung 2",
+    "duration": 111,
+    "synopsis": "Aliquip nostrud consequat veniam eu Lorem duis do aliqua occaecat consequat fugiat.",
+    "createdAt": "2017-04-12T00:00:00.000Z"
+  },
+  {
+    "title": "Tersanjung 3",
+    "duration": 101,
+    "synopsis": "Lorem nulla pariatur mollit dolore culpa laboris irure adipisicing proident ut non.",
+    "createdAt": "2016-12-19T00:00:00.000Z"
+  }
+]

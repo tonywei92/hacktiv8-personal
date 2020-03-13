@@ -1,0 +1,15 @@
+<h2 class="no-mb">Edit a Book</h2>
+<form action="/books/<%= book.id %>/edit" method="post">
+  <input
+    type="text" name="title" value="<%= book.title %>" placeholder="Title" class="field no-mb"
+    autocomplete="off" autofocus>
+  <br>
+  <input type="text" name="description" value="<%= book.description %>"
+    placeholder="Description" class="field no-mb" autocomplete="off">
+  <br>
+  <input type="text" name="author" value="<%= book.author %>" placeholder="Author"
+    class="field no-mb" autocomplete="off">
+  <br>
+  <input type="submit" class="button">
+  <a href="/books" class="button">Cancel</a>
+</form>

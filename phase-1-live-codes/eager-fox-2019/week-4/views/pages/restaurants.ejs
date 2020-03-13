@@ -1,0 +1,22 @@
+<div class="row">
+  <!-- <div class="col-4">
+    <h4>Add new restaurant</h4>
+    <%- include('../partials/restaurantForm', { actionLink: '/restaurants' }) %>
+  </div> -->
+  <!-- <div class="col-8"> -->
+    <!-- <div class="row"> -->
+      <% for (let resto of restos) { %>
+      <div class="col-sm-4">
+        <div class="card my-2">
+          <div class="card-body">
+            <h5 class="card-title"><%= resto.name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= resto.location %></h6>
+            <p class="card-text"><%= resto.description %></p>
+            <a href=<%= `/restaurants/${ resto.id }` %> class="card-link float-right">Plan bukber here</a>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    <!-- </div> -->
+  <!-- </div> -->
+</div>

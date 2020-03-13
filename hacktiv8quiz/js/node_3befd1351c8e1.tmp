@@ -1,0 +1,11 @@
+var data = {
+    name : "tony",
+    age: 27,
+    gender: "male"
+}
+for(asdasd in data){
+    console.log(asdasd);
+}
+
+
+

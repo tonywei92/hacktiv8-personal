@@ -1,0 +1,46 @@
+.navbarNya {
+  justify-content: space-between;
+}
+
+.hNya {
+  height: 100%;
+}
+
+.rowNya {
+  position: relative;
+  place-content: center;
+  align-content: center;
+  justify-content: center;
+  height: -webkit-fill-available;
+  justify-content: center;
+}
+
+.atasNya {
+  position: absolute;
+  align-self: center;
+  z-index: 4;
+  right: 0;
+  left: 50%;
+}
+
+.registerNya {
+  background-color: bisque;
+}
+
+.cursorNya {
+  cursor: pointer;
+}
+
+.todoNya {
+  background-image: url('https://pngimage.net/wp-content/uploads/2018/06/png-work-1.png');
+  background-repeat-y: no-repeat;
+  background-attachment: fixed;
+  background-position: left;
+  min-height: -webkit-fill-available;
+}
+
+.modalAddTodo {
+  top: 25%;
+  left: 17%;
+  height: 50%;
+}

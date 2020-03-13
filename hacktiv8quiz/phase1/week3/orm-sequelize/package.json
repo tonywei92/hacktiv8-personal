@@ -1,0 +1,26 @@
+{
+  "name": "orm-sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eager-fox-2019/orm-sequelize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eager-fox-2019/orm-sequelize/issues"
+  },
+  "homepage": "https://github.com/eager-fox-2019/orm-sequelize#readme",
+  "dependencies": {
+    "pg": "^7.11.0",
+    "sequelize": "^5.8.8",
+    "sequelize-cli": "^5.5.0",
+    "sqlite3": "^4.0.8"
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>food type</th>
+        <th>rating</th>
+        <th>location</th>
+        <th>total employees</th>
+        <th>Company name</th>
+        <th>Company Phone</th>
+        <th>Company Address</th>
+        <th>Action</th>
+      </tr>
+
+      <% data.forEach(function(dt) {  %>
+        <tr>
+          <td><%= dt.id %></td>
+          <td><%= dt.name %></td>
+          <td><%= dt.food_type %></td>
+          <td><%= dt.rating %> of 5</td>
+          <td><%= dt.location %></td>
+          <td><%= dt.total_employees %></td>
+          <td><%= dt.c_name %></td>
+          <td><%= dt.c_phone %></td>
+          <td><%= dt.c_location %></td>
+          <td>
+            <a href="/items/<%= dt.id %>/edit">Edit</a>
+            <a href="/items/<%= dt.id %>/delete">Delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+
+
+    <br><hr>
+    <p style="color:red"><%= err %></p>
+    <form action="/items" method="POST">
+      Name: <input type="text" name="name">
+      <br>
+      food_type:<input type="text" name="original_price">
+      <br>
+      rating: <input type="text" name="qty">
+      <br>
+      restaurant location: <input type="text" name="item_type">
+      <br>
+      total employees: <input type="text" name="discount">
+      <br>
+      Company: <select name="CompanyId">
+        <% for(let i=0; i<companies.length; i++) { %>
+          <option value="<%= companies[i].id %>">
+            <%= companies[i].name %>
+          </option>
+        <% } %>
+      </select>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

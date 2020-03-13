@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+  <%- include('../partials/style') %>
+</head>
+<body>
+  <div class="container">
+    <%- include('../partials/header') %>
+    <%- include('add-a-book-form') %>
+    <hr>
+    <% if (books.length) { %>
+      <table border="1" cellspacing="0">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Author</th>
+            <th>Available To Borrow</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i = 0; i < books.length; i++) { %>
+              <tr>
+                <td><%= i + 1 %></td>
+                <td><%= books[i].title %></td>
+                <td><%= books[i].description %></td>
+                <td><%= books[i].author %></td>
+                <td><%= books[i].availableToBorrow ? 'Yes' : 'No' %></td>
+                <td width="90" class="text-center">
+                  <a href="/books/<%= books[i].id %>/edit">Edit</a>
+                  &nbsp;
+                  <a href="/books/<%= books[i].id  %>/delete">Delete</a>
+                </td>
+              </tr>
+          <% } %>
+        </tbody>
+      </table>
+    <% } %>
+  </div>
+</body>
+</html>

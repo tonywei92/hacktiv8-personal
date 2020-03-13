@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <% if (err) {
+      err.forEach(e => { %>
+      <h2 style="color:red"> <%= e %> </h2>
+    <% })} %>
+
+    <form action="/customers/<%= customer.id %>/editProfile" method="post">
+      <label><strong>ID Number:</strong></label>
+      <p><input type="text" name="identityNumber" value="<%= customer.identityNumber %>"></p>
+
+      <label><strong>Full Name:</strong></label>
+      <p><input type="text" name="fullName" value="<%= customer.fullName %>"></p>
+
+      <label><strong>Address:</strong></label>
+      <p><input type="textarea" name="address" value="<%= customer.address %>"></p>
+
+      <label><strong>Birth Date:</strong></label>
+      <p><input type="date" name="birthDate" value="<%= customer.convertBirthDate() %>"></p>
+
+      <label><strong>Gender:</strong></label>
+      <p>
+        <% if (customer.gender === 'male') {  %>
+          <input type="radio" name="gender" value="male" checked>Male<br>
+          <input type="radio" name="gender" value="female">Female<br>
+        <% } else { %>
+          <input type="radio" name="gender" value="male">Male<br>
+          <input type="radio" name="gender" value="female" checked>Female<br>
+        <% } %>
+      </p>
+      <p><button type="submit"> REGISTER </button></p>
+    </form>
+  </body>
+</html>

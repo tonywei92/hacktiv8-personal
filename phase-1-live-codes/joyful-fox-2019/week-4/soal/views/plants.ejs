@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Diary Book - Days <%= farm.dayPlayed %> </h1>
+
+    <h4>Add plant</h4>
+    <form action="" method="POST">
+        <label>Name : <input type="text" name="name"></label>
+        <br>
+        <label>Price : <input type="text" name="price"></label>
+        <br>
+        <label>Day to harvest : <input type="text" name="timeToHarvest"></label>
+        <br>
+        <input type="submit" value="create">
+    </form>
+    <hr>
+    <a href="/farms/<%= farm.id%>/sleep">Sleep</a>
+    <hr />
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Time to Harvest</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i< farm.Plants.length;i++) { %>
+            <tr>
+                <td><%= farm.Plants[i].id %></td>
+                <td><%= farm.Plants[i].name %></td>
+                <td><%= timeToHarvest(farm.Plants[i].timeToHarvest) %></td>
+                <td>
+                    <% if(farm.Plants[i].timeToHarvest > 0) { %>
+                    Waiting
+
+                    <% } else{%>
+                    <a href="/plants/<%= farm.id %>/<%= farm.Plants[i].id%>/harvest">Harvest</a><%= %></td>
+                <% }%>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+
+</html>

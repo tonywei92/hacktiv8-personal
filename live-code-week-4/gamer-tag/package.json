@@ -1,0 +1,18 @@
+{
+  "name": "gamer-tag",
+  "version": "1.0.0",
+  "description": "![architecture](https://img.shields.io/badge/Architecture-MVC-blueviolet) ![sequelize](https://img.shields.io/badge/ORM-Sequelize-blue) ![promise](https://img.shields.io/badge/Async-Promise-yellow) ![expressjs](https://img.shields.io/badge/Server-Express.js-red) ![postgres](https://img.shields.io/badge/DB%20Server-Postgres-orange) ![ejs](https://img.shields.io/badge/View%20Engine-EJS-brightgreen) ## Introduction",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "pg": "^7.14.0",
+    "sequelize": "^5.21.2",
+    "sequelize-cli": "^5.5.1"
+  }
+}

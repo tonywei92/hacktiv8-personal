@@ -1,0 +1,4 @@
+[0m
+    * [1m[34mpica ([34m[4mhttps://nodeca.github.io/pica/demo/[24m[34m)[39m[22m - high quality and fast image
+     resize in browser.[0m
+

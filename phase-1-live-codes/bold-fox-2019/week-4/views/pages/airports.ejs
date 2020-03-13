@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include ../partials/head.ejs %>
+  <body>
+    <% include ../partials/navbar.ejs %>
+    <% airports.forEach((airport) => { %>
+      <%- include('../partials/card.ejs', { airport }) %>
+    <% }) %>
+    <% include ../lib/bootstrap4/script.ejs %>
+  </body>
+</html>

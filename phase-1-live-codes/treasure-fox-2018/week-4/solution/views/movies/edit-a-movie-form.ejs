@@ -1,0 +1,21 @@
+<h2>Edit a Movie</h2>
+<%- include('../partials/validation-errors') %>
+<form action="/movies/<%= movie.id %>/edit" method="post">
+  Title
+  <br>
+  <input
+    type="text" name="title" value="<%= movie.title %>" class="field"
+    autocomplete="off" autofocus>
+  <br>
+  Description
+  <br>
+  <input type="text" name="description" value="<%= movie.description %>" class="field"
+    autocomplete="off">
+  <br>
+  Rating
+  <br>
+  <input type="text" name="rating" value="<%= movie.rating %>" class="field no-mb" autocomplete="off">
+  <br>
+  <input type="submit" class="button">
+  <a href="/movies" class="button">Cancel</a>
+</form>

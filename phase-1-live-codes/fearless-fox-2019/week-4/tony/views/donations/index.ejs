@@ -1,0 +1,43 @@
+<%- include('../partials/header.ejs') %>
+<div class="container">
+    <% if(success) { %>
+    <%- include('../partials/success', { success }); %>
+    <% } %>
+    <h1>Donations</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Campaign</th>
+                <th>Donation</th>
+                <th>Message</th>
+                <th>date</th>
+                <th>Virtual Account</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% donations.forEach(donation => { %>
+            <tr>
+                <td><%= donation.id %></td>
+                <td><%= donation.name %></td>
+                <td><%= donation.campaign.name %></td>
+                <td><%= donation.totalDonation %></td>
+                <td><%= donation.message %></td>
+                <td><%= donation.paidDate %></td>
+                <td><%= donation.virtualAccount %></td>
+                <td>
+                    <% if(donation.paid) { %>
+                    <span class="badge badge-success">Paid</span>
+                    <% } else {%>
+                    <a href="/donations/verify/<%= donation.id %>" class='btn btn-info'>Verify</a>
+                    <a href="#" class="btn btn-danger">Del</a>
+                    <% } %>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+<%- include('../partials/footer.ejs') %>

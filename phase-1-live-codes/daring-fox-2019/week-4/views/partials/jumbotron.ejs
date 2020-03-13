@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h5 class="display-4"><%= report.title %></h5>
+  <p class="lead">REPORT NUMBER: <%= report.noReport %></p>
+  <hr class="my-4">
+  <p style="font-size: 20px;"><%= report.description%></p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="<%= `${setStatusUrl}?setStatus=accepted` %>" role="button">Accept</a>
+    <a class="btn btn-danger btn-lg" href="<%= `${setStatusUrl}?setStatus=rejected` %>" role="button">Reject</a>
+  </p>
+</div>

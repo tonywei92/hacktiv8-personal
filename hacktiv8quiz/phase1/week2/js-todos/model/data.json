@@ -1,0 +1,33 @@
+[
+  {
+    "tags": [
+      "kucing",
+      "anjing",
+      "kuda"
+    ],
+    "_new": true,
+    "id": 6,
+    "task": "Shutdown my computer",
+    "complete": false,
+    "created_at": "2017-05-23T07:57:28.465Z"
+  },
+  {
+    "tags": [],
+    "_new": true,
+    "id": 5,
+    "task": "Bikin aplikasi",
+    "complete": true,
+    "created_at": "2016-05-23T07:57:18.486Z"
+  },
+  {
+    "tags": [
+      "mobil",
+      "anjing"
+    ],
+    "_new": true,
+    "id": 7,
+    "task": "Main game",
+    "complete": false,
+    "created_at": "2015-05-23T07:57:43.808Z"
+  }
+]

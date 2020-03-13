@@ -1,0 +1,12 @@
+[
+  {
+    "name": "patra",
+    "password": "12345",
+    "loggedIn": true
+  },
+  {
+    "name": "rafael",
+    "password": "1234",
+    "loggedIn": false
+  }
+]

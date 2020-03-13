@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Location</th>
+        <th>Action</th>
+      </tr>
+      <% data.forEach(function(dt) {  %>
+        <tr>
+          <td><%= dt.id %></td>
+          <td><%= dt.name %></td>
+          <td><%= dt.rating %></td>
+          <td><%= dt.location %></td>
+          <td><a href="/companies/<%= dt.id %>/items">View</a></td>
+        </tr>
+      <% }) %>
+    </table>
+
+    <hr>
+    Pagination : <br>
+    <% for(let i=1; i<=5; i++) { %>
+      <a href="/companies?page=<%= i %>"><%= i %></a>
+    <% } %>
+  </body>
+</html>

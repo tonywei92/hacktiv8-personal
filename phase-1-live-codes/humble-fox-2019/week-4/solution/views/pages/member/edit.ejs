@@ -1,0 +1,44 @@
+<%- include('../../partials/header') %>
+<div class="row">
+    <form class="col s12" method="POST">
+        <div class="row">
+            <div class="col s12">
+                <h4>Edit member</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="nik" type="text" name="nik" class="validate" value="<%= member.nik %>">
+                <label for="nik">NIK</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="John" name="firstName" id="firstName" type="text" class="validate"
+                    value="<%= member.firstName %>">
+                <label for="firstName">First Name</label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Doe" id="lastName" name="lastName" type="text" class="validate"
+                    value="<%=member.lastName%>">
+                <label for=" lastName">Last Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Jln Kebayoran" name="address" id="address" type="text" class="validate"
+                    value="<%= member.address%>">
+                <label for="address">Address</label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="0812312312" id="phone" name="phone" type="text" class="validate"
+                    value="<%= member.phone %>">
+                <label for="phone">Phone</label>
+            </div>
+        </div>
+        <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">save</i>Save</button>
+
+    </form>
+</div>
+<%- include('../../partials/footer') %>

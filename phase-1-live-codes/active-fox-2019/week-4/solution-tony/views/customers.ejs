@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+<h1>Welcome to hacktiv8 bank</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Identity Number</th>
+                <th>Full Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% customers.forEach(customer => { %>
+                <tr>
+                    <td><%= customer.identityNumber %></td>
+                    <td><%= customer.fullName %></td>
+                    <td>
+                        <a href="/customers/<%= customer.id %>/accounts">View Account</a>
+                        <a href="/customers/<%= customer.id %>/editProfile">Edit Profile</a>
+                        
+                    </td>                    
+                </tr>
+            <% }) %>        
+        </tbody>
+    </table>
+    
+    <a href="/customers/register">REGISTER (NEW CUSTOMER)</a>
+<%- include('partials/footer') %>

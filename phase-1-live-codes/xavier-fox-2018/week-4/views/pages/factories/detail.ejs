@@ -1,0 +1,77 @@
+<%- include('../../partials/head.ejs') %>
+<%- include('../../partials/navbar.ejs') %>
+<div class="container">
+  <h1>Factory Detail</h1>
+  <table class="table">
+      <tr>
+        <th>Name</th>
+        <td><%= factory.name%></td>
+      </tr>
+      <tr>
+        <th>Income</th>
+        <td><%= rupiahFormat(factory.income) %></td>
+      </tr>
+      <tr>
+        <th>Outcome</th>
+        <td><%= rupiahFormat(factory.outcome) %></td>
+      </tr>
+      <tr>
+        <th>Profit</th>
+        <td><%= rupiahFormat(factory.profit) %></td>
+      </tr>
+
+  </table>
+
+  <% if ( errors ) { %>
+    <% errors.forEach(error => { %>
+      <span class="has-text-error alert alert-danger col-md-4 centered">
+        <%= error.message %> 
+      </span>
+    <% }) %>
+  <% } %>
+  <br>
+  <br>
+
+  <h2>Create Robot</h2>
+  <%- include('../../partials/form.ejs', { data: robot, url: url, title: "robot" }) %>
+  <% if ( data.length !== 0 ) {%>
+    <br>
+    <br>
+    <h2>List Robot</h2>
+    <table class="table">
+      <thead style="text-align:center">
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Stock</th>
+          <th scope="col">Price</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
+        <tbody style="text-align:center">
+          <% data.forEach(function(datum, index){%>
+          <tr scope="row">
+            <td><%= index+1 %></td>
+            <td><%= datum.name %></td>
+            <td><%= datum.stock %></td>
+            <td><%= rupiahFormat(datum.price) %></td>
+            <td>
+              <form action="/robots/buy/<%=datum.id%>" method="post" style="display:inline">
+                <input type="number" name="stock">
+                <button type="submit" class="btn btn-primary">Buy</button>
+              </form>
+              <form action="/robots/produce/<%=datum.id%>" method="post" style="display:inline">
+                <input type="number" name="stock">
+                <button type="submit" class="btn btn-primary">Produce</button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+</div>
+<div style="height: 100px"></div>
+<br>
+
+<%- include ../../partials/footer.ejs %>

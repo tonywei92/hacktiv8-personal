@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include('../partials/head.ejs') %>
+</head>
+<body>
+  <%- include('../partials/navbar.ejs') %>
+  <div class="container" style="margin-top: 2em">
+    <div style="text-align:center">
+      <h1>Vegetables</h1>
+    </div>
+    <%- include('../partials/notification.ejs') %>
+    <!-- TABLE -->
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+        <% columns.forEach(column => { %>
+          <th scope="col"><%= column %></th>
+        <% }) %>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach((vegetable, i) => { %>
+        <tr>
+          <th scope="row"><%= romanNumerals(i + 1) %></th>
+          <td scope="row"><%= vegetable.name %></td>
+          <td scope="row"><%= vegetable.Season.name %></td>
+          <td scope="row"><%= vegetable.buy %></td>
+          <td scope="row"><%= vegetable.sell %></td>
+          <td scope="row"><%= vegetable.waterPoin %></td>
+          <td scope="row"><%= vegetable.waterToCrops %></td>
+          <td scope="row"><%= statusValue(vegetable.waterPoin, vegetable.waterToCrops) %>%</td>
+
+          <%- statusOption(vegetable.waterPoin, vegetable.waterToCrops, vegetable.id, vegetable.SeasonId) %>
+
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <hr>
+
+    <!-- FORM -->
+    <div class="container">
+      <h5>Form Add</h5>
+      <form action="/vegetables" method="POST" style="width: 18rem;">
+        <div class="form-group">
+          <label>Name</label>
+          <input name="name" class="form-control" placeholder="input vegetable name">
+        </div>
+        <div class="form-group">
+          <label>Season</label>
+          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="SeasonId">
+            <option selected>Choose...</option>
+            <option value="1">Spring</option>
+            <option value="2">Summer</option>
+            <option value="3">Fall</option>
+            <option value="3">Winter</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Buy</label>
+          <input name="buy" type="number" class="form-control" placeholder="renge 1 - 1000">
+        </div>
+        <div class="form-group">
+          <label>Sell</label>
+          <input name="sell" type="number" class="form-control" placeholder="range 1 - 1000">
+        </div>
+        <div class="form-group">
+          <label>Water To Crops (WTC)</label>
+          <input name="waterToCrops" type="number" class="form-control" placeholder="min 10">
+        </div>
+  
+        <button type="submit" class="btn btn-success">Add Vegetable</button>
+      </form>
+    </div>
+    <div style="height: 100px">
+
+    </div>
+    <%- include('../partials/footer.ejs') %>
+  </div>
+  <%- include('../partials/scriptBS.ejs') %>
+</body>
+</html>

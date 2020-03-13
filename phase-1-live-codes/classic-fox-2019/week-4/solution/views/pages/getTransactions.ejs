@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include('../partials/head.ejs') %>
+</head>
+<body>
+  <%- include('../partials/navbar.ejs') %>
+  <div class="container" style="margin-top: 2em">
+    <div style="text-align:center">
+      <h1>Transactions</h1>
+    </div>
+    
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+        <% columns.forEach(column => { %>
+          <th scope="col"><%= column %></th>
+        <% }) %>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach((season, i) => { %>
+          <tr>
+            <th scope="row"><%= romanNumerals(i + 1) %></th>
+            <td scope="row"><%= season.name %></td>
+            <td scope="row"><%= season.outcome %></td>
+            <td scope="row"><%= season.income %></td>
+            <td scope="row"><%= season.Vegetables.length %></td>
+            <td>
+              <span><a class="text-success" href="/transactions/<%= season.id %>/viewDetail">View Detail</a></span>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <%- include('../partials/footer.ejs') %>
+  </div>
+  <%- include('../partials/scriptBS.ejs') %>
+</body>
+</html>

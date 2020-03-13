@@ -1,0 +1,15 @@
+{
+  "name": "week-4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "pg": "^7.10.0",
+    "sequelize": "^5.7.5"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.1"
+  }
+}

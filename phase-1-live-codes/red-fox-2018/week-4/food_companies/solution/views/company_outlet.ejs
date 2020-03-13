@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Outlet Names from company : Boga Group</h1>
+    <table>
+      <!-- <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Original Price</th>
+        <th>Qty</th>
+        <th>Item Type</th>
+        <th>Discount</th>
+        <th>Price After Discount</th>
+      </tr> -->
+      <% data.forEach(function(dt) {  %>
+        <tr>
+          <td><%= dt.name %></td>
+          <td><a href="/companies/1/outlets/2">Detail</a></td>
+        </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

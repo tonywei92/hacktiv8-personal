@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Favorite Shibes</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="https://use.typekit.net/nhw3aqu.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+
+  <body class="background">
+    <nav class="navbar navbar-expand-lg navbar-light white">
+      <a class="navbar-brand" href="#">Favorite Shibes</a>
+
+      <button class="btn btn-primary my-2 my-sm-0" type="submit">Logout</button>
+    </nav>
+    <!-- Full App -->
+    <div class="container my-4">
+      <div class="row">
+        <div class="col-6 right-border">
+          <h3>Random Shibes</h3>
+          <div class="row">
+            <div class="col-6 mb-3">
+              <div class="card">
+                <img
+                  src="https://cdn.shibe.online/shibes/d12a97136209351955351ab61f147d1e1af01450.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <button class="btn btn-primary btn-block">Add To My Favorites</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 mb-3">
+              <div class="card">
+                <img
+                  src="https://cdn.shibe.online/shibes/d12a97136209351955351ab61f147d1e1af01450.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <button class="btn btn-primary btn-block">Add To My Favorites</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 mb-3">
+              <div class="card">
+                <img
+                  src="https://cdn.shibe.online/shibes/d12a97136209351955351ab61f147d1e1af01450.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <button class="btn btn-primary btn-block">Add To My Favorites</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 mb-3">
+              <div class="card">
+                <img
+                  src="https://cdn.shibe.online/shibes/d12a97136209351955351ab61f147d1e1af01450.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <button class="btn btn-primary btn-block">Add To My Favorites</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <h3>My Favorite Shibes</h3>
+
+          <!-- When there are favorite shibe -->
+          <div class="row ">
+            <div class="col-6 mb-3">
+              <div class="card">
+                <img
+                  src="https://cdn.shibe.online/shibes/d12a97136209351955351ab61f147d1e1af01450.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <button class="btn btn-danger btn-block">Remove From My Favorites</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 mb-3">
+              <div class="card">
+                <img
+                  src="https://cdn.shibe.online/shibes/d12a97136209351955351ab61f147d1e1af01450.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <button class="btn btn-danger btn-block">Remove From My Favorites</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 mb-3">
+              <div class="card">
+                <img
+                  src="https://cdn.shibe.online/shibes/d12a97136209351955351ab61f147d1e1af01450.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <button class="btn btn-danger btn-block">Remove From My Favorites</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 mb-3">
+              <div class="card">
+                <img
+                  src="https://cdn.shibe.online/shibes/d12a97136209351955351ab61f147d1e1af01450.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <button class="btn btn-danger btn-block">Remove From My Favorites</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- When there are no favorite shibe -->
+          <div class="col-12 empty-favorite display-none">
+            <img src="/assets/empty.svg" alt="" />
+
+            <span>No one here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login -->
+    <div class="container my-4  display-none">
+      <div class="row">
+        <div class="col-12 p-0 flex-col">
+          <img src="/assets/security.svg" alt="" style="height:35%;" class="text-center" />
+          <h5 class="font-weight-light mb-3 text-center">You shall not pass, please verify your identity</h5>
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <form>
+                <div class="form-group">
+                  <label for="emailInput">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="emailInput"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter email"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="passwordInput">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="passwordInput"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter password"
+                  />
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

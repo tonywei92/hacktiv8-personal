@@ -1,0 +1,50 @@
+<%- include('partials/header') %>
+
+<table>
+<thead>
+    <tr>
+        <th>Account Number</th>
+        <th>Account Type</th>
+        <th>Balance</th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tbody>
+    
+        <% customer.Accounts.forEach(account => {%>
+            <tr>
+                <td>
+                    <%= account.accountNumber%>
+                </td>
+                <td> 
+                    <%= account.accountName %>
+                </td>   
+                <td>
+                    <%= account.balance %>
+                </td>
+                <td>
+                    <a href="/customers/<%= customer.id  %>/accounts/<%= account.id%>/transfer">Transfer</a>
+                </td>
+            </tr>
+        <% })%>
+</tbody>
+</table>
+
+<form action="" method="POST">
+    <input type="hidden" name="customerId" value=<%= customer.id%>>
+    <div class="form-group">
+        <label for="type">Account Type</label>
+        <select name="type" id="type" class="form-control">
+            <option value="1">On Account</option>
+            <option value="2">Xtra Payroll</option>
+            <option value="3">Tabunganku</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="balance">Balance</label>
+        <input type="number" id="balance" name="balance" class="form-control">
+    </div>
+    <input type="submit" value="Add">
+</form>
+
+<%- include('partials/footer') %>

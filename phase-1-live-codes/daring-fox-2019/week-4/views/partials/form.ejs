@@ -1,0 +1,23 @@
+<form action="<%= actionUrl %>" method="POST">
+  <div class="form-group">
+    <label for="title">Title </label>
+    <input type="text" name="title" class="form-control" id="title" aria-describedby="title" placeholder="Enter title" value="<%= title %>">
+  </div>
+  <div class="form-group">
+    <label for="prosecutor">Prosecutor</label>
+    <input type="text" name="prosecutor" class="form-control" id="prosecutor" aria-describedby="prosecutor" placeholder="Enter prosecutor" value="<%= prosecutor %>">
+  </div>
+  <div class="form-group">
+    <label for="defendant">Defendant</label>
+    <input type="text" name="defendant" class="form-control" id="defendant" aria-describedby="defendant" placeholder="Enter defendant" value="<%= defendant %>">
+  </div>
+  <div class="form-group">
+    <label for="date">Issue Date</label>
+    <input type="date" name="date" class="form-control" id="date" aria-describedby="date" placeholder="Enter judgement date" value="<%= judgementDate %>">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control" name="description" id="description" rows="3"><%= description %></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

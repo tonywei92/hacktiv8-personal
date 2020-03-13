@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Pajero Sport",
+    "GasolineId": 5,
+    "maxFuel": 10,
+    "fuel": 5
+  },
+  {
+    "name": "Lexus RX200t",
+    "GasolineId": 4,
+    "maxFuel": 20,
+    "fuel": 1
+  }
+]

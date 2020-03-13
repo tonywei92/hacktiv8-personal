@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Nama Bank</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% banks.forEach(bank => { %>
+          <tr>
+            <td><a href="/banks/<%= bank.id %>"><%= bank.bankName %></a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>

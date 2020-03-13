@@ -1,0 +1,17 @@
+<div class="list-group row">
+    <%
+      data.forEach((datum) => {%>
+        <div class="list-group-item list-group-item-action align-items-start flex-column">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1" style="word-break:break-all"><%= datum.description %></h5>
+            <small>
+              <form action="/reviews/delete/<%=datum.id%>" method="post">
+                <button type="submit" class="close">&times;</button>
+              </form>
+            </small>
+          </div>
+          <h7>summary: <%= datum.status %></h7>
+        </div>
+      <%})
+    %>
+  </div>

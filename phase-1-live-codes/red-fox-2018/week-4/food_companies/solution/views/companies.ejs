@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="/companies">RESET</a>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th><a href="/companies/sort?<%= query_str.name %>">Name</a></th>
+        <th><a href="/companies/sort?<%= query_str.phone %>">Phone</a></th>
+        <th><a href="/companies/sort?<%= query_str.address %>">Address</a></th>
+        <th>Total Location</th>
+        <th>Action</th>
+      </tr>
+      <% data.forEach(function(dt) {  %>
+        <tr>
+          <td><%= dt.id %></td>
+          <td><%= dt.name %></td>
+          <td><%= dt.phone %></td>
+          <td><%= dt.address %></td>
+          <td><%= dt.total_outlets %></td>
+          <td><a href="/companies/<%= dt.id %>/outlets">View Outlets</a></td>
+        </tr>
+      <% }) %>
+    </table>
+
+  </body>
+</html>

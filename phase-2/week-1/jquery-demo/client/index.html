@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 
+  https://jquery.com/
+  slide: https://docs.google.com/presentation/d/1HktVl9Zs93AZHDVIBsVWGHBBPpo_kDnUq4WHjoUarYQ/edit#slide=id.g45b6da3ca8_2_5
+  Some professional programmer still using jQuery,
+  let's see what experts has to say: https://imgur.com/PXOcoxQ
+  ----------------------
+  [√] Installation
+  [√] Dom Traversal/selector
+  [√] Dom Manipulation, show/hide, appending, creating DOM on the fly
+  [√] Event Binding
+  [ ] Ajax Todo
+-->
+
+<body>
+  <em>Copyright (c) 2020 Tony. S</em>
+  <h1>Todo List v1.0 | Enterprise Edition</h1>
+  <button id="button-show-todos">Show</button>
+  <button id="button-hide-todos">Hide</button>
+  <button id="button-add-random-todo">Add random todo</button>
+  <button id="button-call-ajax">Call ajax on port 3000</button>
+  <hr>
+    <form id="form-todo">
+      <input placeholder="Todo name" id="input-todo"/>
+      <input type="submit" value="add todo" name="todoname">
+    </form>
+  <hr>
+  <ul id="todos-container">
+    <li>First todo</li>
+    <li>Second todo</li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+
+
+      $("#button-call-ajax").on("click", function(){
+        $.ajax({
+            url:"http://localhost:3000/test",
+            success:function(data){
+              console.log(data)
+            },
+            error: function(jqxhr,status,error){
+              console.log(status, error)
+            }
+          })
+      })
+
+
+      var $todosContainer = $("#todos-container")
+
+      var todosArr = [
+        {
+          id: 1,
+          name: "makan"
+        },
+        {
+          id: 2,
+          name: "minum"
+        }
+      ]
+
+      $("#button-hide-todos").on("click", function(){
+        $todosContainer.fadeOut();        
+      })
+
+      $("#button-show-todos").on("click", function(){
+        $todosContainer.fadeIn();
+      })
+
+      $("#button-add-random-todo").on("click", function(){
+        $todosContainer.append(`<li>${Math.random()}</li>`)
+      })
+
+      $("#button-load-todos").on('click', function(){
+        loadTodosFromServer();
+      })
+
+      $("#form-todo").on("submit", function(event){
+        event.preventDefault()
+        addTodo($("#input-todo").val())
+      })
+
+      function addTodo(todoName){
+        $.ajax({
+          url: "http://localhost:3000/todos",
+          method: "POST",
+          data: JSON.stringify({name: todoName, done: false}),
+          contentType: "application/json",
+          success: function(data){
+            loadTodosFromServer()
+          }
+        })
+      }
+
+      function deleteTodo(id){
+        $.ajax({
+          url: "http://localhost:3000/todos/" + id,
+          method: "DELETE",
+          success: function(){
+            loadTodosFromServer()
+          }
+        })
+      }
+
+      function updateTodo(id, todoName, done){
+        $.ajax({
+          url: "http://localhost:3000/todos/" + id,
+          method: "PUT",
+          data: JSON.stringify({name: todoName, done: done}),
+          contentType: "application/json",
+          success: function(data){
+            loadTodosFromServer()
+          }
+        })
+      }
+
+      function loadTodosFromServer(){
+        $.ajax({
+          url: "http://localhost:3000/todos",
+          method: "GET",
+          success: function(todos){
+            todosArr = todos
+            attachTodosToDom()
+          }
+        })
+      }
+
+      function attachTodosToDom(){
+        $todosContainer.empty()
+        todosArr.forEach(todo => {
+          var $todo = $(`<li>${todo.name}</li>`);
+          var $deleteButton = $(`<button>x</button>`);
+          var $editButton = $(`<button>edit</button>`);
+          var $editForm = $(`
+            <form></form>
+          `)
+          var $checkboxDone = $(`<input type="checkbox" ${todo.done ? "checked": ""}>`)
+          $deleteButton.on("click", function(){
+            deleteTodo(todo.id)
+          })
+
+          $editButton.on('click', function(){
+
+          })
+
+
+
+          $checkboxDone.on("click", function(event){
+              updateTodo(todo.id, todo.name, event.target.checked)
+          })
+
+          $todo.append($deleteButton)
+          $todo.prepend($checkboxDone)
+          $todosContainer.append($todo)
+        })
+      }
+
+      // loadTodosFromServer();
+
+  </script>
+</body>
+
+
+</html>

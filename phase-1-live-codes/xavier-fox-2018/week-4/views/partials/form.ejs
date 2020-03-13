@@ -1,0 +1,47 @@
+<!-- <form action="<%= url %>" method="post">
+  <%
+    if ( title == "factory" ) {%>
+      <label for="name"> Name: </label>
+      <input type="text" name="name" value="<%=data.name%>">
+      <br>
+      <input type="submit" value="SUBMIT">
+    <%} else if ( title == "robot"){%>
+      <label for="name"> Name: </label>
+      <input type="text" name="name" value="<%=data.name%>">
+      <br>
+      <label for="stock"> Stock: </label>
+      <input type="number" name="stock" placeholder="enter robot stock" value=<%=data.stock%>>
+      <br>
+      <label for="price"> Price: </label>
+      <input type="text" name="price" placeholder="enter robot price" value=<%=data.price%>>
+      <input type="submit" value="SUBMIT">
+      <%}
+  %>
+ 
+</form> -->
+
+<form action="<%= url %>" method="post">
+  <% if ( title === "factory" ) {%>
+    <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter factory name" name="name" value="<%=data.name%>">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+  <% } else { %>
+    <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" name="name" class="form-control" aria-describedby="emailHelp" placeholder="Enter robot name" value="<%=data.name%>">
+      </div>
+      <div class="form-group">
+          <label for="stock">Stock: </label>
+          <input type="number" name="stock" class="form-control" aria-describedby="stockHelp" placeholder="Enter robot stock" value="<%=data.stock%>">
+        </div>
+        <div class="form-group">
+            <label for="name">Price: </label>
+            <input type="text" name="price" class="form-control" aria-describedby="priceHelp" placeholder="Enter robot price" value="<%=data.price%>">
+          </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+  <%}
+%>
+ 
+</form>

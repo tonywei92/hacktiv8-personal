@@ -1,0 +1,39 @@
+<%- include('../partials/header.ejs') %>
+<div class="container">
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>TimeLimit</th>
+                <th>Target</th>
+                <th>Verified</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% campaigns.forEach(campaign => { %>
+            <tr>
+                <td><%= campaign.id %></td>
+                <td><a href="/campaigns/<%= campaign.id %>"><%= campaign.name %></a></td>
+                <td><%= campaign.description %></td>
+                <td><%= campaign.location %></td>
+                <td><%= campaign.timeLimit %></td>
+                <td><%= campaign.getCollectedAmount() %> / <%= campaign.donationTarget %></td>
+                <td><%= campaign.verified %></td>
+                <td>
+                    <% if(campaign.verified){ %>
+                    <a href="/campaigns/<%= campaign.id %>">Donate</a>
+                    <% } else {%>
+                    <a href="/campaigns/verify/<%= campaign.id %>">Verify</a>
+                    <% } %>
+                </td>
+            </tr>
+            <% })%>
+        </tbody>
+    </table>
+
+</div>
+<%- include('../partials/footer.ejs') %>

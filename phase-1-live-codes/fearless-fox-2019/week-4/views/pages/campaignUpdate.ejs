@@ -1,0 +1,30 @@
+<%- include('../partials/errorNotif')%>
+<form method="POST" action=<%= `/campaigns/update/${campaign.id}` %>>
+  <div class="form-group">
+    <label>Campaign Name</label>
+    <input name="name" type="text" class="form-control" placeholder="Input campaign name here" value="<%= campaign.name %>">
+  </div>
+  <div class="form-group">
+    <label>Campaign Description</label>
+    <textarea name="description" class="form-control" placeholder="Input campaign description"><%= campaign.description %></textarea>
+  </div>
+  <div class="form-group">
+    <label>Campaign Location</label>
+    <input name="location" type="text" class="form-control" placeholder="Input campaign location here" value="<%= campaign.location %>">
+  </div>
+  <div class="form-group">
+    <label>Donation Target</label>
+    <input type="number" name="donationTarget" class="form-control" placeholder="Minimum Target Donation Rp.1.000.000" value="<%= campaign.donationTarget %>"> 
+  </div>
+  <div class="form-group">
+    <label>Time Limit</label>
+    <input type="date" name="timeLimit" class="form-control" value="<%= campaign.timeLimit.toISOString().slice(0,10) %>">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="verified" checked="<%= campaign.verified %>">
+    <label class="form-check-label" for="exampleCheck1">Verified</label>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary my-2 btn-block">Submit</button>
+  </div>
+</form>

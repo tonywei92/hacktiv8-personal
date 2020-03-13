@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Hacktiv8 Fox - First Live Code</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="/">Favorites Album that make me stronger</a>
+          <a href="#" class="text-danger">Logout</a>
+        </div>
+      </nav>
+      <div class="jumbotron">
+        <div class="container">
+
+          <!-- This page show up when you successfully login -->
+          <div class="row">
+            <div class="col border border-primary mr-2">
+              <h1 class="text-center">Search Album</h1>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Artist Name" aria-label="Album Title" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-6 mb-3">
+                  <div class="card">
+                    <img src="https://www.theaudiodb.com/images/media/album/thumb/mr-a-z-4f426c7c16f87.jpg" class="card-img-top">
+                    <div class="card-body">
+                      <h5 class="card-title">Mr. A-Z</h5>
+                      <p>Jason Mraz - 2005</p>
+                      <a href="#" class="float-right">
+                        <i class="fa fa-bookmark-o fa-2x"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col border border-primary">
+              <h1 class="text-center">My Favorites</h1>
+              <div class="row">
+                <div class="col-6 mb-3">
+                  <div class="card">
+                    <img src="https://www.theaudiodb.com/images/media/album/thumb/the-best-damn-thing-4ddb79e9f1368.jpg" class="card-img-top">
+                    <div class="card-body">
+                      <h5 class="card-title">The Best Damn Thing</h5>
+                      <p>Avril Lavigne - 2007</p>
+                      <a href="#" class="float-right">
+                        <i class="fa fa-ban fa-2x"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- This is Login Form -->
+        <div id="loginForm" class="col-4 mx-auto my-4">
+          <form >
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+
+        <!-- This is notification alert -->
+        <div class="alert alert-success mx-4 my-2" role="alert">
+          put your success notification here
+        </div>
+         <div class="alert alert-danger mx-4 my-2" role="alert">
+           put your fail notification here
+         </div>
+
+      </div>
+
+      <!-- core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+
+    </div>
+  </body>
+</html>

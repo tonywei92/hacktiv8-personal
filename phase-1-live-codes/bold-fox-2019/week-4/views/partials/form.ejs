@@ -1,0 +1,22 @@
+<form action="<%= actionUrl %>" method="post">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupSelect01">Boarding</label>
+    </div>
+    <input type="datetime-local" name="boardingTime" class="custom-select" value="<%= getPickerDateFormat(schedule.boardingTime) %>">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupSelect01">Airplanes</label>
+    </div>
+    <select class="custom-select" id="inputGroupSelect01" name="airplane">
+      <% airplanes.forEach((airplane) => { %>
+        <option value="<%= airplane.type %>" <%= airplane.type == schedule.airplane ? 'selected': '' %>>
+          <%= airplane.type %>
+        </option>
+      <% }) %>
+      
+    </select>
+  </div>
+  <button type="submit" class="btn btn-outline-primary">Submit</button>
+</form>

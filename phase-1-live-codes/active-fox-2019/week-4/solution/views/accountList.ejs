@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="/customers/">BACK</a>
+    <h1>Good day, <%= customer.fullName %></h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Account Number</th>
+          <th>Type</th>
+          <th>Balance</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <p>
+          <% customer.Accounts.forEach(account => { %>
+            <tr>
+              <td><%= account.accountNumber %></td>
+              <td><%= account.type %></td>
+              <td><%= account.getBalance() %></td>
+              <td><a href="/customers/<%= customer.id %>/accounts/<%= account.id %>/transfer">transfer</a></td>
+            </tr>
+          <% }) %>
+        </p>
+      </tbody>
+    </table>
+
+    <br><br><br>
+    <h2><u>ADD ACCOUNT</u></h2>
+    <form action="/customers/<%= customer.id %>/accounts" method="post">
+      <label><strong>Account Type:</strong></label>
+      <p>
+        <select name="type">
+          <option value="On Account">On Account</option>
+          <option value="Xtra Payroll">Xtra Payroll</option>
+          <option value="Tabungaku">Tabunganku</option>
+        </select>
+      </p>
+      <label><strong>Balance:</strong></label>
+      <p>
+        <input type="text" name="balance" placeholder="0">
+      </p>
+      <button type="submit">SAVE</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="/customers/<%=account.CustomerId%>/accounts/<%=account.id%>/transfer" method="post">
+      <p>
+        <label>Transfer From: </label>
+        <% let transferFrom = `${account.accountNumber} ${account.type} ${account.getBalance()}`%>
+        <label><strong><%= transferFrom %></strong></label></p>
+        <input type="hidden" name="balance" value="<%=account.balance%>">
+      <p>
+        <label>Amount: </label>
+        <input type="text" name="amount" placeholder="0">
+      </p>
+      <p>
+        <label>Transfer To: </label>
+        <select name='otherAccountId'>
+          <% otherAccounts.forEach(oAcc => { %>
+            <option value="<%= oAcc.id%>"> <%= oAcc.accountNumber%> - <%= oAcc.Customer.fullName%> </option>
+          <% }) %>
+        </select>
+      </p>
+      <button type="submit">TRANSFER</button>
+    </form>
+  </body>
+</html>

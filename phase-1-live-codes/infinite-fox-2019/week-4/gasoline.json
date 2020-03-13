@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Premium",
+    "price": 10000,
+    "quota": 10
+  },
+  {
+    "name": "Pertalite",
+    "price": 12000,
+    "quota": 5
+  },
+  {
+    "name": "Pertamax",
+    "price": 13000,
+    "quota": 20
+  },
+  {
+    "name": "Pertamax Plus",
+    "price": 15000,
+    "quota": 15
+  },
+  {
+    "name": "Solar",
+    "price": 8000,
+    "quota": 15
+  }
+]

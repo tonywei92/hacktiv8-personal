@@ -1,0 +1,26 @@
+<h2>Rent</h2>
+<%- include('../partials/validation-errors') %>
+<form action="/rents" method="post">
+  Movie:
+  <br>
+  <select name="movieId" class="field" id="movieId" autofocus>
+    <option value="">--- Please select a Movie ---</option>
+    <% for (let i = 0; i < movies.length; i++) { %>
+        <option value="<%= movies[i].id %>"><%= movies[i].title %></option>
+    <% } %>
+  </select>
+  <br>
+  Borrower's Name:
+  <br>
+  <input type="text" name="borrowerName" class="field"
+  autocomplete="off" autofocus>
+  <br>
+  Borrower's Gender:
+  <br>
+  <select name="borrowerGender" class="field no-mb">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+  <br>
+  <input type="submit" class="button">
+</form>

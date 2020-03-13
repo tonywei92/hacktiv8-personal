@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Humble Manga</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
+
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 col-md-7 py-4">
+                <h4 class="text-white">About</h4>
+                <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+              </div>
+              <div class="col-sm-4 offset-md-1 py-4">
+                <h4 class="text-white">Contact</h4>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                  <li><a href="#" class="text-white">Like on Facebook</a></li>
+                  <li><a href="#" class="text-white">Email me</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+          <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              <strong>Humble Manga</strong>
+            </a>
+            <div class="ml-auto" v-if="currentPage!=='login'">
+              <button class="btn btn-danger" @click="logout()">Logout</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      <main role="main">
+        <section v-if="currentPage!=='login'" class="jumbotron text-center">
+          <div class="container">
+            <h1 class="jumbotron-heading">Humble Manga</h1>
+            <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+            <p>
+              <a @click.prevent="changePage('mangaList')" href="#" class="btn btn-primary my-2">All Manga</a>
+              <a @click.prevent="changePage('myCollection')" href="#" class="btn btn-secondary my-2">My Collection</a>
+            </p>
+          </div>
+        </section>
+        <!-- This is Login Form -->
+         <!-- This is mainpage -->
+         <div v-if="successNotif" class="alert alert-success mx-4 my-2" role="alert">
+          {{successNotif}}
+        </div>
+        <div v-if="errorNotif" class="alert alert-danger mx-4 my-2" role="alert">
+          {{errorNotif}}
+        </div>
+        <div v-if="currentPage==='login'" id="loginForm" class="col-4 mx-auto my-4">
+          <form @submit.prevent="login">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input v-model="loginForm.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input v-model="loginForm.password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+       
+        <div v-else-if="currentPage==='mangaList'" class="album py-5 bg-light">
+          
+          <div class="container">
+
+            <div class="row">
+              <!-- This is mangacards -->
+              <div class="col-md-4" v-for="manga in mangaList">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" style="width: 100%;
+                  height: 15vw;
+                  object-fit: cover;object-position: left top;" :src="manga.img" :alt="'image'+manga.title" >
+                  <div class="card-body">
+                    <p class="card-text">{{manga.title}}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" @click="addCollection(manga._id)">Add to my collection</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-else-if="currentPage==='myCollection'" class="album py-5 bg-light">
+          <div class="container">
+            <div class="row">
+                <div class="col-md-4" v-for="manga in collection">
+                  <div class="card mb-4 box-shadow">
+                    <div class="card-body">
+                      <h3>{{manga.title}}</h3>
+                      <h5>author: {{manga.author}}</h5>
+                      <p class="card-text bg-primary text-white">Chapters Length: {{manga.chapters_len}}</p>
+                      <p class="card-text"><span v-html="manga.description"></span></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary" @click="removeCollection(manga._id)">Remove</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+
+    <!-- core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          currentUser: '',
+          mangaList: [],
+          collection: [],
+          successNotif: false,
+          errorNotif: false,
+          host: 'http://localhost:3000',
+          loginStatus: false,
+          loginForm: {
+            email: '',
+            password: ''
+          },
+          currentPage: 'login'
+        },
+        methods: {
+          fetchManga() {
+            axios.get(`${this.host}/mangas`)
+              .then(response => {
+                this.mangaList = response.data
+                console.log(response.data)
+              })
+              .catch(err => {
+                console.log(err)
+              })
+          },
+          fetchCollections() {
+            axios({
+              method: 'GET',
+              url: `${this.host}/mangas/collection`,
+              headers: { "access_token" : localStorage.getItem("access_token")}
+            })
+            .then(response => {
+              console.log(response.data)
+              this.collection = response.data
+            })
+            .catch(err => {
+              console.log(err)
+            })
+          },
+          logout() {
+            localStorage.removeItem("access_token")
+            this.currentPage = 'login'
+          },
+          login() {
+            axios.post(`${this.host}/login`, this.loginForm)
+              .then(response => {
+                localStorage.setItem('access_token', response.data.access_token)
+                this.checkLoginStatus()
+              })
+              .catch(err => {
+                this.errorNotif = err.response.data
+                setTimeout(() => {
+                  this.errorNotif = false
+                }, 3000)
+              })
+          },
+          checkLoginStatus() {
+            if(localStorage.getItem('access_token')) {
+              this.changePage('mangaList')
+              this.fetchManga()
+              this.resetForm()
+            } else {
+              this.currentPage= 'login'
+            }
+          },
+          resetForm() {
+            this.loginForm = {
+              email: '',
+              password: ''
+            }
+          },
+          changePage(page) {
+            this.currentPage = page
+            if(page === 'myCollection') {
+              this.fetchCollections()
+            }
+          },
+          addCollection(id) {
+            axios({
+              method: "POST",
+              url: `${this.host}/mangas/collection/${id}`,
+              headers: { "access_token" : localStorage.getItem("access_token")}
+            })
+              .then(response => {
+                console.log(response.data)
+                this.successNotif = "Success adding collection"
+                setTimeout(() => {
+                  this.successNotif = false
+                }, 3000)
+              })
+              .catch(err => {
+                this.errorNotif = err.response.data[0]
+                setTimeout(() => {
+                  this.errorNotif = false
+                }, 3000)
+              })
+          },
+          removeCollection(id) {
+            axios({
+              method: "DELETE",
+              url: `${this.host}/mangas/collection/${id}`,
+              headers: { "access_token" : localStorage.getItem("access_token")} 
+            })
+            .then(response => {
+              this.fetchCollections()
+              this.successNotif = "success delete manga collection"
+              setTimeout(() => {
+                  this.successNotif = false
+                }, 3000)
+            })
+            .catch(err => {
+              this.errorNotif = "Failed to delete"
+                setTimeout(() => {
+                  this.errorNotif = false
+                }, 3000)
+            })
+          }
+        },
+        created: function() {
+          this.checkLoginStatus()
+        }
+      })
+    </script>
+  </body>
+</html>

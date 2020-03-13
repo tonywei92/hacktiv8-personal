@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body>
+  <div class="container">
+    <%- include('../partials/header') %>
+    <h2 class="mb-3">Add a Task</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <%- include('../partials/validation-errors') %>
+        <form action="/tasks/add" method="post">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              name="title"
+              class="form-control"
+              id="title"
+              placeholder="Enter title"
+              autocomplete="off"
+              value="<%= oldInputs.title || '' %>"
+              autofocus>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input
+              type="text"
+              name="description"
+              class="form-control"
+              id="description"
+              placeholder="Enter description"
+              value="<%= oldInputs.description || '' %>"
+              autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="points">Points</label>
+            <input
+              type="text"
+              name="points"
+              class="form-control"
+              aria-describedby="pointsHelp"
+              id="points"
+              placeholder="Enter points"
+              value="<%= oldInputs.points || '' %>"
+              autocomplete="off">
+            <small id="pointsHelp" class="form-text text-muted">
+              Enter the reward (points) for completing this task! 😉
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="EmployeeId">Employee Name</label>
+            <select class="form-control" id="EmployeeId" name="EmployeeId">
+              <option value="">-- Please select employee --</option>
+              <% for (let i = 0; i < employees.length; i++) { %>
+                  <% const employee = employees[i]; %>
+                  <option
+                    value="<%= employee.id %>"
+                    <%= employee.id == oldInputs.EmployeeId ? 'selected' : '' %>>
+                    <%= employee.getFullName() %>
+                  </option>
+              <% } %>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <a href="/tasks" class="btn btn-default">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <%- include('../partials/scripts') %>
+</body>
+</html>

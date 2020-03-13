@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Kulkas GL 8 Pintu",
+    "category": "elektronik",
+    "stock": 10,
+    "minimalPrice": 950000
+  },
+  {
+    "name": "Kursi Manager Hacktiv8",
+    "category": "furnitur",
+    "stock": 3,
+    "minimalPrice": 450000
+  },
+  {
+    "name": "Meja makan aneka rasa 2x3",
+    "category": "furnitur",
+    "stock": 1,
+    "minimalPrice": 600000
+  },
+  {
+    "name": "Baju Mike B10 uk M grey",
+    "category": "fashion",
+    "stock": 8,
+    "minimalPrice": 1200000
+  },
+  {
+    "name": "Hp OddO v17",
+    "category": "elektronik",
+    "stock": 30,
+    "minimalPrice": 5200000
+  },
+  {
+    "name": "Hp VOVI F7",
+    "category": "elektronik",
+    "stock": 12,
+    "minimalPrice": 400000
+  }
+]

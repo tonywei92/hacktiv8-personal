@@ -1,0 +1,7 @@
+<% if (flash.errors) { %>
+  <% flash.errors.forEach((error, i) => { %>
+    <div class="alert alert-danger mt-2" role="alert">
+      <%= error.message %>
+    </div>
+  <% })%>
+<% } %>

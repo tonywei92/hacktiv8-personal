@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="/items/<%= data.id %>/edit" method="POST">
+      Name: <input type="text" name="name" value="<%= data.name %>">
+      <br>
+      Original price:<input type="text" name="original_price" value="<%= data.original_price %>">
+      <br>
+      Quantity: <input type="text" name="qty" value="<%= data.qty %>">
+      <br>
+      Item Type: <input type="text" name="item_type" value="<%= data.item_type %>">
+      <br>
+      Discount: <input type="text" name="discount" value="<%= data.discount %>">
+      <br>
+      Company: <select name="CompanyId">
+        <% for(let i=0; i<companies.length; i++) { %>
+          <% let status = companies[i].id == data.CompanyId ? 'selected' : 'kjh' %>
+          <option <%= status %> value="<%= companies[i].id %>">
+            <%= companies[i].name %>
+          </option>
+        <% } %>
+      </select>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

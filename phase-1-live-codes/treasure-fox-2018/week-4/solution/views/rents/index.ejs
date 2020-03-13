@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+  <%- include('../partials/style') %>
+</head>
+<body>
+  <div class="container">
+    <%- include('../partials/header') %>
+    <%- include('add-a-rent-form', { movies }) %>
+    <hr>
+    <br>
+    <% for (let i = 1; i <= pageCount; i++) { %>
+        <a class="pagination-links <%= i === currentPage ? 'selected-page' : '' %>" href="/rents?page=<%= i %>"><%= i %></a>
+    <% } %>
+    <% if (rents.length) { %>
+      <table border="1" cellspacing="0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Borrower's Name</th>
+            <th>Movie Title</th>
+            <th>Transaction Date</th>
+            <th>Returned</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i = 0; i < rents.length; i++) { %>
+              <tr>
+                <td><%= rents[i].id %></td>
+                <td><%= rents[i].getNameWithTitle() %></td>
+                <td><%= rents[i].Movie.title %></td>
+                <td><%= formatDate(rents[i].createdAt) %></td>
+                <td><%= rents[i].returned ? 'Yes' : 'No' %></td>
+                <td width="90" class="text-center">
+                  <% if (!rents[i].returned) { %>
+                    <a href="/rents/<%= rents[i].id %>/return">Return</a>
+                  <% } %>
+                </td>
+              </tr>
+          <% } %>
+        </tbody>
+      </table>
+    <% } else { %>
+        <p class="text-center">No data.</p>
+    <% }%>
+  </div>
+</body>
+</html>

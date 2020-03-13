@@ -1,0 +1,30 @@
+<div class="row justify-content-center">
+  <% if (schedule) { %>
+  <div class="col-7">
+    <h4 class="mb-3"><%= schedule.title %></h4>
+    <p><%= schedule.description %></p>
+    <p><strong>time: </strong><%= formatTime(schedule.date) %></p>
+    <p><strong>venue: </strong><%= schedule.Restaurant.name %>, <%= schedule.Restaurant.location %></p>
+    <p>
+      <strong>Maximum Participants: </strong><%= schedule.maxParticipants %>
+      <% if (schedule.free) { %>
+      <span class="badge badge-pill badge-success ml-3" style="font-size: 1.1em">free</span>
+      <% } %>
+    </p>
+    <p><strong>Participants: </strong><%= schedule.participants %> (<%= schedule.getAvailableSeats() %> seats available)</p>
+    <div class="row justify-content-around my-5">
+      <a class="btn btn-primary" href=<%= `/schedules/attend/${schedule.id}` %>>Confirm attendance</a>
+      <a class="btn btn-danger" href=<%= `/schedules/delete/${schedule.id}` %>>Delete this event</a>
+    </div>
+    <%- include('../partials/errorAlert.ejs', { error: locals.flash.errors ? flash.errors.find(err => err.path === "participants") : null }) %>
+    <%- include('../partials/errorAlert.ejs', { error: locals.flash.errors ? flash.errors.find(err => err.validatorKey === "cantDelete") : null }) %>
+  </div>
+  <div class="col-5">
+    <%- include('../partials/bukberForm', { mode: 'edit', actionLink: `/schedules/edit/${schedule.id}`, inputs: schedule }) %>
+  </div>
+  <% } else { %>
+  <div class="alert alert-info" role="alert">
+    Schedule not found
+  </div>
+  <% } %>
+</div>

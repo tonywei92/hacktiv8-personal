@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <% if (err) {
+      err.forEach(e => { %>
+      <h2 style="color:red"> <%= e %> </h2>
+    <% })} %>
+
+    <form action="/customers/register" method="post">
+      <label><strong>ID Number:</strong></label>
+      <p><input type="text" name="identityNumber" placeholder="Input your id number"></p>
+
+      <label><strong>Full Name:</strong></label>
+      <p><input type="text" name="fullName" placeholder="Input your full name"></p>
+
+      <label><strong>Address:</strong></label>
+      <p><input type="textarea" name="address" placeholder="Input your address"></p>
+
+      <label><strong>Birth Date:</strong></label>
+      <p><input type="date" name="birthDate"></p>
+
+      <label><strong>Gender:</strong></label>
+      <p>
+        <input type="radio" name="gender" value="male">Male<br>
+        <input type="radio" name="gender" value="female">Female<br>
+      </p>
+      <p><button type="submit"> REGISTER </button></p>
+    </form>
+  </body>
+</html>

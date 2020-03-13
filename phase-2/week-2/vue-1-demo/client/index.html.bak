@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.JS Demo</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div class="flex flex-wrap justify-center">
+            <div class="h-12 bg-indigo-800 shadow-xl w-full mb-8 flex justify-center text-white">
+                <div class="w-8/12 flex h-full items-center">
+                    <div class="w-1/2 text-xl">VueDevDemo</div>
+                    <div class="w-1/2 text-right">
+                        <!-- load data -->
+                        <button v-on:click="loadData"
+                            class="border border-indigo-700 font-bold px-4 py-2 rounded bg-indigo-700 hover:bg-indigo-600 transition-colors duration-300">Load
+                            Data</button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-8/12 flex  text-gray-700">
+                <div class="w-4/12">
+                    <h1 class="pb-5 text-xl font-bold">News</h1>
+                    <div v-if="articles.length > 0">
+                        <ul class="rounded-lg shadow-xl border">
+                            <!-- list article -->
+                            <li v-for="(article, i) in articles" v-on:click="setActiveArticle(i)"
+                                v-bind:class="`flex h-24 p-2 border-b border-gray-300 cursor-pointer transition-colors duration-300 ${activeArticle === i ? 'bg-indigo-700 text-white hover:bg-indigo-600':'hover:bg-gray-100'}`">
+                                <div class="h-full w-4/12 rounded overflow-hidden mr-4">
+                                    <img class="object-cover h-full w-full"
+                                        v-bind:src="article.featured_image"
+                                        alt="">
+                                </div>
+                                <div class="w-8/12 flex flex-col py-2">
+                                    <h1 class="font-bold">{{article.title}}</h1>
+                                    <p class="text-sm">{{article.description}}</p>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div v-else>
+                        <em>Data not loaded</em>
+                    </div>
+                </div>
+                <div class="w-8/12 pl-8">
+                    <h1 class="pb-5 text-xl font-bold">Preview</h1>
+                    <div v-if="activeArticle !== null && activeEdit === null">
+                        <div class="flex flex-col p-8 border rounded shadow-xl">
+                            <!-- edit button -->
+                            <div>
+                                <div class="w-full flex justify-end"><button v-on:click="setActiveEdit(activeArticle)" class="rounded-lg font-bold border px-4 py-2">Edit</button></div>
+                                <h1 class="text-2xl font-bold">{{articles[activeArticle].title}}</h1>
+                                <p>{{articles[activeArticle].description}}</p>
+                                <p>{{articles[activeArticle].author}} - {{articles[activeArticle].updated_at}}</p>
+                                <img v-bind:src="articles[activeArticle].featured_image" alt="">
+                            </div>
+                            <div class="pt-8">
+                                <p>
+                                    {{articles[activeArticle].body}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="activeArticle === null && activeEdit === null">
+                        <em>No article selected</em>
+                    </div>
+                    <!-- form edit -->
+                    <div v-if="activeEdit!==null" class="shadow-xl border rounded p-8">
+                        <form action="" v-on:submit="saveArticle">
+                            <div class="mb-1">
+                                <label>Title</label>
+                                <input v-model="activeEdit.title" type="text" class="block border rounded p-1">
+                            </div>
+                            <div class="mb-1">
+                                <label>Description</label>
+                                <input v-model="activeEdit.description" type="text" class="block border rounded p-1">
+                            </div>
+                            <div class="mb-1">
+                                <label>Author:</label>
+                                <input v-model="activeEdit.author" type="text" class="block border rounded p-1">
+                            </div>
+                            <div class="mb-1">
+                                <label>Featured Image:</label>
+                                <input v-model="activeEdit.featured_image" type="text" class="block border rounded p-1">
+                            </div>
+                            <div class="mb-1">
+                                <label>Body:</label>
+                                <textarea v-model="activeEdit.body" cols="30" rows="10" class="block border rounded p-1"></textarea>
+                            </div>
+                            <input type="submit" value="Save" class="border text-white bg-blue-500 px-4 py-2 font-bold rounded-lg hover:bg-blue-500">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            articles: [],
+            activeArticle: null,
+            activeEdit:null,
+        },
+        methods: {
+            loadData: function () {
+                fetch('http://localhost:3000/articles')
+                    .then(response => response.json())
+                    .then(articles => this.articles = articles)
+                    .catch(err => console.log(err))
+            },
+            setActiveArticle(idx) {
+                this.activeArticle = idx;
+                this.activeEdit = null;
+            },
+            setActiveEdit: function(idx){
+                this.activeEdit = {...this.articles[idx]};
+            },
+            saveArticle: function(e){
+                e.preventDefault();
+                fetch(`http://localhost:3000/articles/${this.activeEdit.id}}`, {
+                    method: "PUT",
+                    headers: {
+                        'Content-Type': 'application/json'
+                        // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: JSON.stringify(this.activeEdit)
+                })
+                .then(response => response.json())
+                .then(result => {
+                    this.articles[this.activeArticle] = this.activeEdit;
+                    this.activeEdit = null
+                })
+                .catch(err => console.log(err))
+
+            }
+        }
+    })
+</script>
+
+</html>

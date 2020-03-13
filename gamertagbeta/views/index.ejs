@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>MemberTag</title>
+</head>
+
+<body>
+
+    <div class="h-screen w-screen flex justify-center items-center flex-col">
+        <h1 class="text-2xl font-bold">GamerTag <span
+                class="font-light bg-blue-500 text-white rounded p-1 text-lg">Beta</span></h1>
+        <p class="text-xl font-light">We currently have</p>
+        <p class="text-5xl font-bold"><%= memberCount %></p>
+        <p class="font-bold">Members</p>
+        <a href="/members" class="bg-green-500 hover:bg-green-400 text-white uppercase py-1 px-2 rounded mt-4">Enter</a>
+    </div>
+
+</body>
+
+</html>

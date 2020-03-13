@@ -1,0 +1,22 @@
+<%- include('partials/head'); %>
+
+<% if(data.error){ %>
+<%- include('components/messageBox', {
+        type: 'error',
+        message: data.error
+    }) %>
+<% } %>
+
+<% if(data.success){ %>
+<%- include('components/messageBox', {type: 'success', message: data.success}) %>
+<% } %>
+
+<%= test123() %>
+
+<form action="" method="POST">
+    <label>Name: <input type="text" name="name"></label>
+    <br>
+    <input type="submit" value="submit">
+</form>
+
+<%- include('partials/foot'); %>

@@ -1,0 +1,27 @@
+{
+  "name": "favorite-recipes",
+  "version": "1.0.0",
+  "description": "This application acts as a 3rd party API for Xavier Fox's Live Code",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hacktiv8/phase-2-first-live-codes.git"
+  },
+  "author": "Dimitri Wahyudiputra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hacktiv8/phase-2-first-live-codes/issues"
+  },
+  "homepage": "https://github.com/hacktiv8/phase-2-first-live-codes#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0"
+  },
+  "devDependencies": {
+    "dotenv": "^6.1.0"
+  }
+}

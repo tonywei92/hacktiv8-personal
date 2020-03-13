@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!-- <% JSON.stringify(gasoline) %> -->
+<body>
+    <h2>Add new Car using <%= gasoline.name %></h2>
+    <form action="/vehicles/<%=gasoline.id%>" method="POST">
+        <label>Name</label>
+        <input type="text" name="name">
+        <br />
+        <label>Max Fuel</label>
+        <input type="number" name="maxFuel">
+        <br />
+        <input id=submit type="submit" value="add new car">
+    </form>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <h3>List all car using <%= gasoline.name %></h3>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Fuel</th>
+                <th>Max Fuel</th>
+                <th>Fuel Percentage</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%  vehicles.forEach(vehicle=>{  %>
+            <tr>
+                <td><%= vehicle.id   %></td>
+                <td><%= vehicle.name    %></td>
+                <td><%= vehicle.fuel    %></td>
+                <td><%= vehicle.maxFuel %></td>
+                <td><%= `${vehicle.fuel*100}%` %></td>
+                <td>
+                    <a href="/vehicles/<%=vehicle.id%>/addFuel"><button>add more fuel</button></a>
+                    <a href="/vehicles/<%=vehicle.id%>/delete"><button>remove car</button></a>
+                </td>
+            </tr>
+            <%  })  %>
+        </tbody>
+    </table>
+</body>
+
+</html>

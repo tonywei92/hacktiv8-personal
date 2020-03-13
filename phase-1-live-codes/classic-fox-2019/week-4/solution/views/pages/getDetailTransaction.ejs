@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include('../partials/head.ejs') %>
+</head>
+<body>
+  <%- include('../partials/navbar.ejs') %>
+  <div class="container" style="margin-top: 2em">
+    <div style="text-align:center">
+      <h1><%= title %></h1>
+      <h4><a href='/transactions' class="text-success">Back To Transactions</a></h4>
+    </div>
+    
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+        <% columns.forEach(column => { %>
+        <th scope="col"><%= column %></th>
+        <% }) %>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.Vegetables.forEach((vegetable, i) => { %>
+          <tr>
+            <th scope="row"><%= romanNumerals(i + 1) %></th>
+            <td scope="row"><%= vegetable.name %></td>
+            <td scope="row"><%= data.name %></td>
+            <td scope="row"><%= vegetable.buy %></td>
+            <td scope="row"><%= vegetable.sell %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <%- include('../partials/footer.ejs') %>
+  </div>
+  <%- include('../partials/scriptBS.ejs') %>
+</body>
+</html>

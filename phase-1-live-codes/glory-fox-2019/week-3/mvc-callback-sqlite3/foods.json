@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Rendang",
+        "origin": "Sumatera Barat"
+    },
+    {
+        "name": "Otak-otak",
+        "origin": "Kepulauan Riau"
+    },
+    {
+        "name": "Pempek",
+        "origin": "Sumatera Selatan"
+    },
+    {
+        "name": "Mie Bangka",
+        "origin": "Bangka Belitung"
+    },
+    {
+        "name": "Sate Bandeng",
+        "origin": "Banten"
+    },
+    {
+        "name": "Kerak Telor",
+        "origin": "Jakarta"
+    },
+    {
+        "name": "Lumpia",
+        "origin": "Jawa Tengah"
+    }
+]

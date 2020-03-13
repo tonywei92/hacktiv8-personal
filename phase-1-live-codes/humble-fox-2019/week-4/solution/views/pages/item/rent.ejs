@@ -1,0 +1,30 @@
+<%- include('../../partials/header') %>
+
+<h4>Rent "<%= item.name %>"</h4>
+<table>
+    <tbody>
+        <tr>
+            <th>Condition</td>
+            <td><%= item.condition %></td>
+        </tr>
+        <tr>
+            <th>Price/Day</td>
+            <td><%= item.pricePerDay %></td>
+        </tr>
+    </tbody>
+</table>
+<form action="" method="POST">
+    <h5>Choose member:</h5>
+    <select name="memberId" class="browser-default">
+        <% members.forEach(member => {
+        %>
+        <option value="<%= member.id %>"><%= member.fullName %></option>
+        <%
+        }) %>
+
+    </select>
+    <br>
+    <button class="btn">Rent</button>
+</form>
+
+<%- include('../../partials/footer') %>

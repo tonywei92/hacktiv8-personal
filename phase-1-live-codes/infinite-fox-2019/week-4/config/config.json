@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "Semmiverian",
+    "password": null,
+    "database": "live-code-try",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "gvphcpazquhqil",
+    "password": "19043956c2784ab65c1ad107d6dc5a1621a014cba6f91fe86d616d641d93fb2a",
+    "database": "dc6bsaikjl65fl",
+    "host": "ec2-184-73-169-163.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  }
+}

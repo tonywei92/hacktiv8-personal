@@ -1,0 +1,20 @@
+{
+  "currentPlayer": {
+    "name": "putra",
+    "level": 0
+  },
+  "players": [
+    {
+      "name": "putra",
+      "level": 0
+    },
+    {
+      "name": "ahmad",
+      "level": 0
+    },
+    {
+      "name": "zuliansyah",
+      "level": 0
+    }
+  ]
+}

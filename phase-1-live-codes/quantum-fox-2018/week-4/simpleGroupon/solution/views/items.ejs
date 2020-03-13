@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Original Price</th>
+        <th>Qty</th>
+        <th>Item Type</th>
+        <th>Discount</th>
+        <th>Price After Discount</th>
+        <th>Company Name</th>
+        <th>Company Location</th>
+        <th>Action</th>
+      </tr>
+      <% data.forEach(function(dt) {  %>
+        <tr>
+          <td><%= dt.id %></td>
+          <td><%= dt.name %></td>
+          <td><%= dt.original_price %></td>
+          <td><%= dt.qty %></td>
+          <td><%= dt.item_type %></td>
+          <td><%= dt.discount %></td>
+          <td><%= dt.price_after_discount() %></td>
+          <td><%= dt.Company.name %></td>
+          <td><%= dt.Company.location %></td>
+          <td>
+            <a href="/items/<%= dt.id %>/edit">Edit</a>
+            <a href="/items/<%= dt.id %>/delete">Delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+
+    <br><hr>
+    <p style="color:red"><%= err %></p>
+    <form action="/items" method="POST">
+      Name: <input type="text" name="name">
+      <br>
+      Original price:<input type="text" name="original_price">
+      <br>
+      Quantity: <input type="text" name="qty">
+      <br>
+      Item Type: <input type="text" name="item_type">
+      <br>
+      Discount: <input type="text" name="discount">
+      <br>
+      Company: <select name="CompanyId">
+        <% for(let i=0; i<companies.length; i++) { %>
+          <option value="<%= companies[i].id %>">
+            <%= companies[i].name %>
+          </option>
+        <% } %>
+      </select>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

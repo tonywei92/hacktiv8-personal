@@ -1,0 +1,14 @@
+{
+  "name": "mvc-callback-sqlite3",
+  "version": "1.0.0",
+  "description": "Hacktiv8's Treasure Fox week 3 live code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dimitri Wahyudiputra",
+  "license": "MIT",
+  "dependencies": {
+    "sqlite3": "^4.0.1"
+  }
+}

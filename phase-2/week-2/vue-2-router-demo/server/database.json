@@ -1,0 +1,98 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "content": "lorem ipsum dolor sit amet",
+      "posted_by": 2,
+      "posted_at": "an hour ago"
+    },
+    {
+      "id": 2,
+      "content": "lorem ipsum dolor sit amet 2",
+      "posted_by": 3,
+      "posted_at": "yesterday at 12:32 PM"
+    },
+    {
+      "id": 3,
+      "content": "lorem ipsum dolor sit amet 3",
+      "posted_by": 1,
+      "posted_at": "3 Feb 2018"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Tony S",
+      "gender": "Male",
+      "lives_in": "Tangerang",
+      "friends": [
+      	{
+      		"id": 2,
+      		"name": "Rubhi"
+      	},
+      	{
+      		"id": 3,
+      		"name": "Stefani"
+      	},
+      	{
+      		"id": 4,
+      		"name": "Fauzan"
+      	},
+      	{
+      		"id": 5,
+      		"name": "Fiqi"
+      	},
+      	{
+      		"id": 6,
+      		"name": "Dedy"
+      	},
+      	{
+      		"id": 7,
+      		"name": "Seven"
+      	}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Rubhi",
+      "gender": "Male",
+      "lives_in": "Jakarta",
+      "friends": []
+    },
+    {
+      "id": 3,
+      "name": "Stefani",
+      "gender": "Female",
+      "lives_in": "Medan",
+      "friends": []
+    },
+    {
+      "id": 4,
+      "name": "Fauzan",
+      "gender": "Female",
+      "lives_in": "Bandung",
+      "friends": []
+    },
+    {
+      "id": 5,
+      "name": "Fiqi",
+      "gender": "Male",
+      "lives_in": "Palembang",
+      "friends": []
+    },
+    {
+      "id": 6,
+      "name": "Dedy",
+      "gender": "Male",
+      "lives_in": "Balikpapan",
+      "friends": []
+    },
+    {
+      "id": 7,
+      "name": "Seven",
+      "gender": "Female",
+      "lives_in": "Jakarta",
+      "friends": []
+    }
+  ]
+}
